@@ -11,14 +11,6 @@ namespace HKOWebMVC4.Controllers
     {
         public ActionResult Index()
         {
-            var j = 0;
-            HKOPodaci HKOData = new HKOPodaci();
-            ObjectResult<KolegijSkupIshodaUcenja_Result> podatak = HKOData.KolegijSkupIshodaUcenja(1);
-            if(podatak == null){
-                var i = 1;
-                i++;
-                j += i;
-            }
             return View();
         }
 
