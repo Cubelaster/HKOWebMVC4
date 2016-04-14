@@ -21,59 +21,35 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.BuduciStudent
         }
 
         // GET: BuduciStudent/Details/5
-        public ActionResult Details(int id)
+        public ActionResult RadnaMjesta(int? zanimanjeId)
         {
-            return View();
+            ObjectResult<ZanimanjeRadnaMjesta_Result> radnaMjestaResult = HKOData.ZanimanjeRadnaMjesta(zanimanjeId);
+            return View("~/Views/HKOWebViews/BuduciStudent/RadnaMjesta.cshtml", radnaMjestaResult);
         }
 
         // GET: BuduciStudent/Create
-        public ActionResult Create()
+        public ActionResult KljucniPoslovi(int zanimanjeId)
         {
             return View();
         }
 
         // GET: BuduciStudent/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Kompetencije(int zanimanjeId)
         {
             return View();
         }
 
         // POST: BuduciStudent/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Kolegiji(int studijskiProgramId)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
                 return View();
-            }
         }
 
         // GET: BuduciStudent/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult IshodiUcenja(int kolegijId)
         {
             return View();
-        }
-
-        // POST: BuduciStudent/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<HKOWebMVC4.ZanimanjeRadnaMjesta_Result>
+
+@{
+    ViewBag.Title = "RadnaMjesta";
+}
+
+<h2>RadnaMjesta</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RadnoMjestoID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RadnoMjesto)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RadnoMjestoID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RadnoMjesto)
+        </td>
+    </tr>
+}
+
+</table>

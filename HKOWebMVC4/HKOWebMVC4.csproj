@@ -528,6 +528,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\HKOWebViews\BuduciStudent\Index.cshtml" />
+    <Content Include="Views\HKOWebViews\BuduciStudent\RadnaMjesta.cshtml" />
+    <Content Include="Views\HKOWebViews\BuduciStudent\KljucniPoslovi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
