@@ -1,15 +1,21 @@
-﻿@model IEnumerable<HKOWebMVC4.ZanimanjeKljucniPoslovi_Result>
+﻿@model IEnumerable<HKOWebMVC4.StudijskiProgramObavezniKolegiji_Result>
 
 @{
-    ViewBag.Title = "KljucniPoslovi";
+    ViewBag.Title = "Kolegiji";
 }
 
-<h2>KljucniPoslovi</h2>
+<h2>Kolegiji</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <table class="table">
     <tr>
         <th>
-            Ključni posao
+            @Html.DisplayNameFor(model => model.KolegijID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kolegij)
         </th>
         <th></th>
     </tr>
@@ -17,7 +23,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.KljucniPosao)
+            @Html.DisplayFor(modelItem => item.KolegijID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kolegij)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

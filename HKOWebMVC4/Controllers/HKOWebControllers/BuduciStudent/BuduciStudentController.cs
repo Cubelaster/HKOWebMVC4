@@ -36,7 +36,8 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.BuduciStudent
         // GET: BuduciStudent/Edit/5
         public ActionResult Kompetencije(int zanimanjeId)
         {
-            return View();
+            ObjectResult<ZanimanjeKompetencije_Result> zanimanjeKompetencijeResult = HKOData.ZanimanjeKompetencije(zanimanjeId);
+            return View("~/Views/HKOWebViews/BuduciStudent/Kompetencije.cshtml", zanimanjeKompetencijeResult);
         }
 
         // POST: BuduciStudent/Edit/5
