@@ -6,19 +6,25 @@
 
 <h2>RadnaMjesta</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            Radno mjesto
-        </th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RadnoMjesto)
-        </td>
-    </tr>
-}
+<table id="radnaMjesta">
+    <thead>
+        <tr>
+            <th>
+                Radno mjesto
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RadnoMjesto)
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+@Html.ActionLink("Povratak", "Index", new { controller = "BuduciStudent", @class = "btn btn-success" })

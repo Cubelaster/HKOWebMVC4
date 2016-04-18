@@ -1,0 +1,32 @@
+﻿@model IEnumerable<HKOWebMVC4.KolegijSkupIshodaUcenja_Result>
+
+@{
+    ViewBag.Title = "IshodiUcenja";
+}
+
+<h2>Ishodi učenja</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ishod učenja</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SkupIshodaUcenja)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href=@ViewBag.back>Povratak</a>
+
+

@@ -45,8 +45,7 @@
                             <li>@Html.ActionLink("Radna Mjesta", "RadnaMjesta", new { controller = "BuduciStudent", zanimanjeId = item.ZanimanjeID })
                             <li>@Html.ActionLink("Ključni poslovi", "KljucniPoslovi", new { controller = "BuduciStudent", zanimanjeId = item.ZanimanjeID })
                             <li>@Html.ActionLink("Kompetencije", "Kompetencije", new { controller = "BuduciStudent", zanimanjeId = item.ZanimanjeID })
-                            <li>@Html.ActionLink("Kolegiji", "Kolegiji", new { controller = "BuduciStudent", studijskiProgramId = item.StudijskiProgramID })
-                            <li>@Html.ActionLink("Ishodi Učenja", "IshodiUcenja", new { controller = "BuduciStudent", kolegijId = item.StudijID })
+                            <li>@Html.ActionLink("Kolegiji", "Kolegiji", new { controller = "BuduciStudent", studijskiProgramId = item.StudijskiProgramID, zanimanjeId = item.ZanimanjeID })
                             <li role="separator" class="divider"></li>
                             <li><a asp-action="" asp-route-id="">Showcase</a></li>
                         </ul>

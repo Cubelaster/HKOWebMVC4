@@ -224,6 +224,7 @@
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HKOWebModels\KolegijiPregled.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -532,6 +533,7 @@
     <Content Include="Views\HKOWebViews\BuduciStudent\KljucniPoslovi.cshtml" />
     <Content Include="Views\HKOWebViews\BuduciStudent\Kompetencije.cshtml" />
     <Content Include="Views\HKOWebViews\BuduciStudent\Kolegiji.cshtml" />
+    <Content Include="Views\HKOWebViews\BuduciStudent\IshodiUcenja.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

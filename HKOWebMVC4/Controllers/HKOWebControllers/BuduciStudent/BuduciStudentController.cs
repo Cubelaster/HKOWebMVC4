@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HKOWebMVC4.Models.HKOWebModels;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
 using System.Linq;
@@ -30,7 +31,8 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.BuduciStudent
         // GET: BuduciStudent/Create
         public ActionResult KljucniPoslovi(int zanimanjeId)
         {
-            return View();
+            ObjectResult<ZanimanjeKljucniPoslovi_Result> kljucniPosloviResult = HKOData.ZanimanjeKljucniPoslovi(zanimanjeId);
+            return View("~/Views/HKOWebViews/BuduciStudent/KljucniPoslovi.cshtml", kljucniPosloviResult);
         }
 
         // GET: BuduciStudent/Edit/5
@@ -40,17 +42,21 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.BuduciStudent
             return View("~/Views/HKOWebViews/BuduciStudent/Kompetencije.cshtml", zanimanjeKompetencijeResult);
         }
 
-        // POST: BuduciStudent/Edit/5
-        [HttpPost]
-        public ActionResult Kolegiji(int studijskiProgramId)
+        public ActionResult Kolegiji(int studijskiProgramId, int zanimanjeId)
         {
-                return View();
+            KolegijiPregled kolegijiPregled = new KolegijiPregled();
+            kolegijiPregled.obavezniKolegijiResult = HKOData.StudijskiProgramObavezniKolegiji(studijskiProgramId);
+            kolegijiPregled.izborniKolegijiResult = HKOData.StudijskiProgramIzborniKolegiji(studijskiProgramId);
+            kolegijiPregled.preporuceniKolegijiResult = HKOData.ZanimanjePreporuceniIzborniKolegiji(zanimanjeId);
+            return View("~/Views/HKOWebViews/BuduciStudent/Kolegiji.cshtml", kolegijiPregled);
         }
 
         // GET: BuduciStudent/Delete/5
         public ActionResult IshodiUcenja(int kolegijId)
         {
-            return View();
+            ViewBag.back = System.Web.HttpContext.Current.Request.UrlReferrer;
+            ObjectResult<KolegijSkupIshodaUcenja_Result> ishodiUcenjaResult = HKOData.KolegijSkupIshodaUcenja(kolegijId);
+            return View("~/Views/HKOWebViews/BuduciStudent/IshodiUcenja.cshtml", ishodiUcenjaResult);
         }
     }
 }
