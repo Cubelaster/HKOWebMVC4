@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44362</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -202,6 +202,8 @@
     <Compile Include="Controllers\HKOWebControllers\BuduciStudent\BuduciStudentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAL\Repository\UserRepositories\UserRepository.cs" />
+    <Compile Include="DAL\Service\UserServices\UserService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,6 +225,16 @@
     <Compile Include="KolegijSkupIshodaUcenja_Result.cs">
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ApplicationDbContext\201604230856174_Initial.cs" />
+    <Compile Include="Migrations\ApplicationDbContext\201604230856174_Initial.Designer.cs">
+      <DependentUpon>201604230856174_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationDbContext\201604231048333_Initial1.cs" />
+    <Compile Include="Migrations\ApplicationDbContext\201604231048333_Initial1.Designer.cs">
+      <DependentUpon>201604231048333_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HKOWebModels\KolegijiPregled.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -375,6 +387,7 @@
       <DependentUpon>HKOPodaci.edmx</DependentUpon>
       <LastGenOutput>HKOPodaci.cs</LastGenOutput>
     </Content>
+    <Content Include="Readme.txt" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -551,6 +564,14 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ApplicationDbContext\201604230856174_Initial.resx">
+      <DependentUpon>201604230856174_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ApplicationDbContext\201604231048333_Initial1.resx">
+      <DependentUpon>201604231048333_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -569,7 +590,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>4701</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:4701/</IISUrl>
+          <IISUrl>https://localhost:44362/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -49,9 +49,9 @@ namespace HKOWebMVC4.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Korisničko ime")]
+        [DataType(DataType.Text)]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +64,11 @@ namespace HKOWebMVC4.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Korisničko ime")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -79,6 +84,19 @@ namespace HKOWebMVC4.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Ime")]
+        public string Ime { get; set; }
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Prezime")]
+        public string Prezime { get; set; }
+        [Required]
+        [Range(0, 9999999999 , ErrorMessage = "Unesite ispravan JMBAG!")]
+        [Display(Name = "JMBAG")]
+        public string JMBAG { get; set; }
     }
 
     public class ResetPasswordViewModel

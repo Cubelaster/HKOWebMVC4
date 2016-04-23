@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HKOWebMVC4.Models;
+using HKOWebMVC4.DAL.Repository.UserServices;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace HKOWebMVC4.Controllers
 {
@@ -15,6 +17,7 @@ namespace HKOWebMVC4.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private UserService userService = new UserService();
 
         public ManageController()
         {
@@ -64,8 +67,10 @@ namespace HKOWebMVC4.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            ApplicationUser currentUser = userService.fetchUserById(userId);
             var model = new IndexViewModel
             {
+                user = currentUser,
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
