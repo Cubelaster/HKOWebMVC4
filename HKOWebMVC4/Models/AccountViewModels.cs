@@ -85,18 +85,18 @@ namespace HKOWebMVC4.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Required]
-        [DataType(DataType.Text)]
-        [Display(Name = "Ime")]
-        public string Ime { get; set; }
-        [Required]
-        [DataType(DataType.Text)]
-        [Display(Name = "Prezime")]
-        public string Prezime { get; set; }
-        [Required]
-        [Range(0, 9999999999 , ErrorMessage = "Unesite ispravan JMBAG!")]
-        [Display(Name = "JMBAG")]
-        public string JMBAG { get; set; }
+        //[Required]
+        //[DataType(DataType.Text)]
+        //[Display(Name = "Ime")]
+        //public string Ime { get; set; }
+        //[Required]
+        //[DataType(DataType.Text)]
+        //[Display(Name = "Prezime")]
+        //public string Prezime { get; set; }
+        //[Required]
+        //[Range(0, 9999999999 , ErrorMessage = "Unesite ispravan JMBAG!")]
+        //[Display(Name = "JMBAG")]
+        //public string JMBAG { get; set; }
     }
 
     public class ResetPasswordViewModel

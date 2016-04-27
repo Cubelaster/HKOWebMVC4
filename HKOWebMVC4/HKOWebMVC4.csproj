@@ -233,6 +233,10 @@
     <Compile Include="Migrations\ApplicationDbContext\201604231048333_Initial1.Designer.cs">
       <DependentUpon>201604231048333_Initial1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ApplicationDbContext\201604251522041_MigrationAdresa.cs" />
+    <Compile Include="Migrations\ApplicationDbContext\201604251522041_MigrationAdresa.Designer.cs">
+      <DependentUpon>201604251522041_MigrationAdresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -570,6 +574,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ApplicationDbContext\201604231048333_Initial1.resx">
       <DependentUpon>201604231048333_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ApplicationDbContext\201604251522041_MigrationAdresa.resx">
+      <DependentUpon>201604251522041_MigrationAdresa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

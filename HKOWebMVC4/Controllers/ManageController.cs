@@ -64,6 +64,7 @@ namespace HKOWebMVC4.Controllers
                 : message == ManageMessageId.Error ? "An error has occurred."
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
+                : message == ManageMessageId.UpdateSuccess ? "Izmjena uspješna!"
                 : "";
 
             var userId = User.Identity.GetUserId();
@@ -386,7 +387,8 @@ namespace HKOWebMVC4.Controllers
             SetPasswordSuccess,
             RemoveLoginSuccess,
             RemovePhoneSuccess,
-            Error
+            Error,
+            UpdateSuccess
         }
 
 #endregion

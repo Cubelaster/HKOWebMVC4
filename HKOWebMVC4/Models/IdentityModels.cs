@@ -13,6 +13,8 @@ namespace HKOWebMVC4.Models
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string JMBAG { get; set; }
+        public string Država { get; set; }
+        public string Grad { get; set; }
         public string Adresa { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
