@@ -15,5 +15,15 @@ namespace HKOWebMVC4.DAL.Repository.UserServices
         {
             return userRepo.fetchUserById(userId);
         }
+
+        public ApplicationUser fetchCurrentUser()
+        {
+            return userRepo.fetchCurrentUser();
+        }
+
+        public ApplicationUser updateUserProfileInfo(ApplicationUser user, ApplicationUser newUser)
+        {
+            return userRepo.updateUserProfileInfo(user, newUser);
+        }
     }
 }

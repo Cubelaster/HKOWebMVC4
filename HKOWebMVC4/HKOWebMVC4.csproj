@@ -237,6 +237,10 @@
     <Compile Include="Migrations\ApplicationDbContext\201604251522041_MigrationAdresa.Designer.cs">
       <DependentUpon>201604251522041_MigrationAdresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ApplicationDbContext\201604281519059_UserProfileInfo seperated.cs" />
+    <Compile Include="Migrations\ApplicationDbContext\201604281519059_UserProfileInfo seperated.Designer.cs">
+      <DependentUpon>201604281519059_UserProfileInfo seperated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -577,6 +581,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ApplicationDbContext\201604251522041_MigrationAdresa.resx">
       <DependentUpon>201604251522041_MigrationAdresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ApplicationDbContext\201604281519059_UserProfileInfo seperated.resx">
+      <DependentUpon>201604281519059_UserProfileInfo seperated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

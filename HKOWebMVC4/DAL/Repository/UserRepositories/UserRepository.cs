@@ -18,5 +18,25 @@ namespace HKOWebMVC4.DAL.Repository.UserRepositories
         {
             return userManager.FindById(userId);
         }
+
+        public ApplicationUser fetchCurrentUser()
+        {
+            ApplicationUser user = userManager.FindById( HttpContext.Current.User.Identity.GetUserId() );
+            return user;
+        }
+
+        public ApplicationUser updateUserProfileInfo(ApplicationUser user, ApplicationUser newUser)
+        {
+            user.UserProfileInfo.Ime = newUser.UserProfileInfo.Ime;
+            user.UserProfileInfo.Prezime = newUser.UserProfileInfo.Prezime;
+            user.UserProfileInfo.JMBAG = newUser.UserProfileInfo.JMBAG;
+            user.UserProfileInfo.Država = newUser.UserProfileInfo.Država;
+            user.UserProfileInfo.Grad = newUser.UserProfileInfo.Grad;
+            user.UserProfileInfo.Adresa = newUser.UserProfileInfo.Adresa;
+            dbContext.UserProfileInfo.Attach(user.UserProfileInfo);
+            dbContext.Entry(user.UserProfileInfo).State = System.Data.Entity.EntityState.Modified;
+            dbContext.SaveChanges();
+            return user;
+        }
     }
 }

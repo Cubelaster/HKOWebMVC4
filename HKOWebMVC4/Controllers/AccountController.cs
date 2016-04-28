@@ -1,7 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -9,8 +6,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HKOWebMVC4.Models;
-using Microsoft.AspNet.Identity.EntityFramework;
 using static HKOWebMVC4.Controllers.ManageController;
+using HKOWebMVC4.DAL.Repository.UserServices;
 
 namespace HKOWebMVC4.Controllers
 {
@@ -19,6 +16,7 @@ namespace HKOWebMVC4.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private UserService userService = new UserService();
 
         public AccountController()
         {
@@ -42,25 +40,11 @@ namespace HKOWebMVC4.Controllers
             }
         }
 
-        public async Task<ActionResult> Edit(IndexViewModel editModel)
+        public ActionResult Edit(IndexViewModel editModel)
         {
-            var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
-            var manager = new UserManager<ApplicationUser>(store);
-            ApplicationUser user = manager.FindById(User.Identity.GetUserId());
-            user.Ime = editModel.user.Ime;
-            user.Prezime = editModel.user.Prezime;
-            user.JMBAG = editModel.user.JMBAG;
-            user.Država = editModel.user.Država;
-            user.Grad = editModel.user.Grad;
-            user.Adresa = editModel.user.Adresa;
-            //ApplicationUser currentUser = editModel.user;
-            //ApplicationDbContext db = new ApplicationDbContext();
-            //db.Users.Attach(currentUser);
-            //db.Entry(currentUser).State = System.Data.Entity.EntityState.Modified;
-            //db.SaveChanges();
-            await manager.UpdateAsync(user);
-            store.Context.SaveChanges();
-            return RedirectToAction("Index", "Manage", new { Message = ManageMessageId.UpdateSuccess });
+            userService.updateUserProfileInfo(userService.fetchCurrentUser(), editModel.user);
+            TempData["update"] = "Izmjena uspješna!";
+            return RedirectToAction("Index", "Manage");
         }
 
         public ApplicationUserManager UserManager
@@ -179,7 +163,8 @@ namespace HKOWebMVC4.Controllers
                     //Ime = model.Ime,
                     //Prezime = model.Prezime,
                     //JMBAG = model.JMBAG,
-                    Email = model.Email                    
+                    Email = model.Email,
+                    UserProfileInfo = new UserProfileInfo()                
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

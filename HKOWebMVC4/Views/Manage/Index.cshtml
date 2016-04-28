@@ -5,7 +5,7 @@
 
 <h2>@ViewBag.Title.</h2>
 
-<p class="text-success">@ViewBag.StatusMessage</p>
+<p class="text-success">@TempData["update"]</p>
 
 <hr />
 <div class="container">
@@ -34,50 +34,50 @@
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.user.Ime, new { @class = "col-md-3 control-label" })
+                @Html.LabelFor(m => m.user.UserProfileInfo.Ime, new { @class = "col-md-3 control-label" })
                 <div class="col-md-9">
-                    @Html.TextBoxFor(m => m.user.Ime, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.user.Ime, "", new { @class = "text-danger" })
+                    @Html.TextBoxFor(m => m.user.UserProfileInfo.Ime, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.user.UserProfileInfo.Ime, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(m => m.user.Prezime, new { @class = "col-md-3 control-label" })
+                @Html.LabelFor(m => m.user.UserProfileInfo.Prezime, new { @class = "col-md-3 control-label" })
                 <div class="col-md-9">
-                    @Html.TextBoxFor(m => m.user.Prezime, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.user.Prezime, "", new { @class = "text-danger" })
+                    @Html.TextBoxFor(m => m.user.UserProfileInfo.Prezime, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.user.UserProfileInfo.Prezime, "", new { @class = "text-danger" })
                 </div>
             </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(m => m.user.JMBAG, new { @class = "col-md-3 control-label" })
+                        @Html.LabelFor(m => m.user.UserProfileInfo.JMBAG, new { @class = "col-md-3 control-label" })
                         <div class="col-md-9">
-                            @Html.TextBoxFor(m => m.user.JMBAG, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.user.JMBAG, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.user.UserProfileInfo.JMBAG, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.user.UserProfileInfo.JMBAG, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(m => m.user.Država, new { @class = "col-md-3 control-label" })
+                        @Html.LabelFor(m => m.user.UserProfileInfo.Država, new { @class = "col-md-3 control-label" })
                         <div class="col-md-9">
-                            @Html.TextBoxFor(m => m.user.Država, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.user.Država, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.user.UserProfileInfo.Država, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.user.UserProfileInfo.Država, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(m => m.user.Grad, new { @class = "col-md-3 control-label" })
+                        @Html.LabelFor(m => m.user.UserProfileInfo.Grad, new { @class = "col-md-3 control-label" })
                         <div class="col-md-9">
-                            @Html.TextBoxFor(m => m.user.Grad, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.user.Grad, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.user.UserProfileInfo.Grad, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.user.UserProfileInfo.Grad, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(m => m.user.Adresa, new { @class = "col-md-3 control-label" })
+                        @Html.LabelFor(m => m.user.UserProfileInfo.Adresa, new { @class = "col-md-3 control-label" })
                         <div class="col-md-9">
-                            @Html.TextBoxFor(m => m.user.Adresa, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.user.Adresa, "", new { @class = "text-danger" })
+                            @Html.TextBoxFor(m => m.user.UserProfileInfo.Adresa, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.user.UserProfileInfo.Adresa, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
