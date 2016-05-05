@@ -104,5 +104,37 @@ namespace HKOWebMVC4
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ZanimanjeStudiji_Result>("ZanimanjeStudiji");
         }
+    
+        public virtual ObjectResult<StudijskiProgrami_Result> StudijskiProgrami()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<StudijskiProgrami_Result>("StudijskiProgrami");
+        }
+    
+        public virtual ObjectResult<StudijskiProgramKljucniPoslovi_Result> StudijskiProgramKljucniPoslovi(Nullable<int> studijskiProgramID)
+        {
+            var studijskiProgramIDParameter = studijskiProgramID.HasValue ?
+                new ObjectParameter("StudijskiProgramID", studijskiProgramID) :
+                new ObjectParameter("StudijskiProgramID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<StudijskiProgramKljucniPoslovi_Result>("StudijskiProgramKljucniPoslovi", studijskiProgramIDParameter);
+        }
+    
+        public virtual ObjectResult<StudijskiProgramKompetencije_Result> StudijskiProgramKompetencije(Nullable<int> studijskiProgramID)
+        {
+            var studijskiProgramIDParameter = studijskiProgramID.HasValue ?
+                new ObjectParameter("StudijskiProgramID", studijskiProgramID) :
+                new ObjectParameter("StudijskiProgramID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<StudijskiProgramKompetencije_Result>("StudijskiProgramKompetencije", studijskiProgramIDParameter);
+        }
+    
+        public virtual ObjectResult<StudijskiProgramRadnaMjesta_Result> StudijskiProgramRadnaMjesta(Nullable<int> studijskiProgramID)
+        {
+            var studijskiProgramIDParameter = studijskiProgramID.HasValue ?
+                new ObjectParameter("StudijskiProgramID", studijskiProgramID) :
+                new ObjectParameter("StudijskiProgramID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<StudijskiProgramRadnaMjesta_Result>("StudijskiProgramRadnaMjesta", studijskiProgramIDParameter);
+        }
     }
 }

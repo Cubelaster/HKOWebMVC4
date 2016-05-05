@@ -6,4 +6,5 @@
     $('#preporuceniTable').DataTable();
     $('#obavezniTable').DataTable();
     $('#izborniTable').DataTable();
+    $('#studijskiProgramiTable').DataTable();
 });

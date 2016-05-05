@@ -1,0 +1,28 @@
+﻿@model IEnumerable<HKOWebMVC4.StudijskiProgramKljucniPoslovi_Result>
+
+@{
+    ViewBag.Title = "KljucniPoslovi";
+}
+
+<h2>Ključni poslovi</h2>
+
+<table id="kljucniPoslovi">
+    <thead>
+        <tr>
+            <th>
+                Ključni posao
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KljucniPosao)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Povratak", "Index", new { controller = "ZavrseniStudent", @class = "btn btn-success" })

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace HKOWebMVC4.Controllers.HKOWebControllers.BuduciStudent
 {
+    [Authorize]
     public class BuduciStudentController : Controller
     {
         #region member

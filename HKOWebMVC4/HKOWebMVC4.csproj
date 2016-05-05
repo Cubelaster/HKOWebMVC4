@@ -200,6 +200,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HKOWebControllers\BuduciStudent\BuduciStudentController.cs" />
+    <Compile Include="Controllers\HKOWebControllers\ZavrseniStudent\ZavrseniStudentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\Repository\UserRepositories\UserRepository.cs" />
@@ -252,7 +253,19 @@
     <Compile Include="StudijskiProgramIzborniKolegiji_Result.cs">
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
+    <Compile Include="StudijskiProgrami_Result.cs">
+      <DependentUpon>HKOPodaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudijskiProgramKljucniPoslovi_Result.cs">
+      <DependentUpon>HKOPodaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudijskiProgramKompetencije_Result.cs">
+      <DependentUpon>HKOPodaci.tt</DependentUpon>
+    </Compile>
     <Compile Include="StudijskiProgramObavezniKolegiji_Result.cs">
+      <DependentUpon>HKOPodaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudijskiProgramRadnaMjesta_Result.cs">
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
     <Compile Include="ZanimanjeKljucniPoslovi_Result.cs">
@@ -555,15 +568,17 @@
     <Content Include="Views\HKOWebViews\BuduciStudent\Kompetencije.cshtml" />
     <Content Include="Views\HKOWebViews\BuduciStudent\Kolegiji.cshtml" />
     <Content Include="Views\HKOWebViews\BuduciStudent\IshodiUcenja.cshtml" />
+    <Content Include="Views\HKOWebViews\ZavrseniStudent\Index.cshtml" />
+    <Content Include="Views\HKOWebViews\ZavrseniStudent\Kompetencije.cshtml" />
+    <Content Include="Views\HKOWebViews\ZavrseniStudent\KljucniPoslovi.cshtml" />
+    <Content Include="Views\HKOWebViews\ZavrseniStudent\RadnaMjesta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\HKOWebControllers\Administracija\" />
     <Folder Include="Controllers\HKOWebControllers\Poslodavac\" />
-    <Folder Include="Controllers\HKOWebControllers\ZavrseniStudentViews\" />
     <Folder Include="Views\HKOWebViews\Administracija\" />
     <Folder Include="Views\HKOWebViews\Poslodavac\" />
-    <Folder Include="Views\HKOWebViews\ZavrseniStudentViews\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
