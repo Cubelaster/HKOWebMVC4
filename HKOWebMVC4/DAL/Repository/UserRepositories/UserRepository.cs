@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using HKOWebMVC4.Models;
-using HKOWebMVC4.DAL.Repository.UserServices;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
+using HKOWebMVC4.Models.HKOWebModels.Korisnik;
 
 namespace HKOWebMVC4.DAL.Repository.UserRepositories
 {
     public class UserRepository
     {
+        #region members
         private static ApplicationDbContext dbContext = new ApplicationDbContext();
         private static UserStore<ApplicationUser> userStore = new UserStore<ApplicationUser>(dbContext);
         private static UserManager<ApplicationUser> userManager = new UserManager<ApplicationUser>(userStore);
+        #endregion
+
+        #region methods
         public ApplicationUser fetchUserById(string userId)
         {
             return userManager.FindById(userId);
@@ -38,5 +42,20 @@ namespace HKOWebMVC4.DAL.Repository.UserRepositories
             dbContext.SaveChanges();
             return user;
         }
+
+        public List<KorisnikOdabranaZanimanja> getSelectedProffesionForCurrentUser()
+        {
+            var currentUser = fetchCurrentUser().UserProfileInfo;
+            var poZanimanjaList = getSelectedProffesionsForUser(currentUser);
+            return poZanimanjaList;
+        }
+
+        public List<KorisnikOdabranaZanimanja> getSelectedProffesionsForUser(UserProfileInfo user)
+        {
+            var poZanimanjaList = dbContext.KorisnikOdabranaZanimanja.Where(p => p.userProfile.Id == user.Id).ToList();
+            return poZanimanjaList;
+        }
+
+        #endregion
     }
 }

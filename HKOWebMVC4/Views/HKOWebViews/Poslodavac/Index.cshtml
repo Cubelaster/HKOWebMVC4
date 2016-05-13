@@ -1,0 +1,5 @@
+﻿@model HKOWebMVC4.Models.HKOWebModels.Korisnik.KorisnikOdabirZanimanja
+
+    @Html.Partial("~/Views/Korisnik/_KorisnikOdabirOdabranaZanimanja.cshtml", Model)
+
+    @Html.ActionLink("Pregled kandidata", "Kandidati", "Poslodavac", null, new { @class = "btn btn-success" })

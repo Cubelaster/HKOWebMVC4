@@ -9,6 +9,7 @@ namespace HKOWebMVC4.Migrations
     {
         public Configuration()
         {
+            //koga briga za migracije
             AutomaticMigrationsEnabled = false;
         }
 

@@ -9,6 +9,7 @@ namespace HKOWebMVC4.Migrations.ApplicationDbContext
     {
         public Configuration()
         {
+            //koga briga za migracije
             AutomaticMigrationsEnabled = false;
             MigrationsDirectory = @"Migrations\ApplicationDbContext";
         }

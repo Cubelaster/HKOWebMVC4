@@ -200,10 +200,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HKOWebControllers\BuduciStudent\BuduciStudentController.cs" />
+    <Compile Include="Controllers\HKOWebControllers\Poslodavac\PoslodavacController.cs" />
     <Compile Include="Controllers\HKOWebControllers\ZavrseniStudent\ZavrseniStudentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAL\Repository\PoslodavacRepository\PoslodavacRepository.cs" />
     <Compile Include="DAL\Repository\UserRepositories\UserRepository.cs" />
+    <Compile Include="DAL\Service\PoslodavacService\PoslodavacService.cs" />
     <Compile Include="DAL\Service\UserServices\UserService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,26 +229,12 @@
     <Compile Include="KolegijSkupIshodaUcenja_Result.cs">
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ApplicationDbContext\201604230856174_Initial.cs" />
-    <Compile Include="Migrations\ApplicationDbContext\201604230856174_Initial.Designer.cs">
-      <DependentUpon>201604230856174_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ApplicationDbContext\201604231048333_Initial1.cs" />
-    <Compile Include="Migrations\ApplicationDbContext\201604231048333_Initial1.Designer.cs">
-      <DependentUpon>201604231048333_Initial1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ApplicationDbContext\201604251522041_MigrationAdresa.cs" />
-    <Compile Include="Migrations\ApplicationDbContext\201604251522041_MigrationAdresa.Designer.cs">
-      <DependentUpon>201604251522041_MigrationAdresa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ApplicationDbContext\201604281519059_UserProfileInfo seperated.cs" />
-    <Compile Include="Migrations\ApplicationDbContext\201604281519059_UserProfileInfo seperated.Designer.cs">
-      <DependentUpon>201604281519059_UserProfileInfo seperated.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HKOWebModels\KolegijiPregled.cs" />
+    <Compile Include="Models\HKOWebModels\Korisnik\KorisnikOdabirZanimanja.cs" />
+    <Compile Include="Models\HKOWebModels\Korisnik\KorisnikOdabranaZanimanja.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -572,13 +561,14 @@
     <Content Include="Views\HKOWebViews\ZavrseniStudent\Kompetencije.cshtml" />
     <Content Include="Views\HKOWebViews\ZavrseniStudent\KljucniPoslovi.cshtml" />
     <Content Include="Views\HKOWebViews\ZavrseniStudent\RadnaMjesta.cshtml" />
+    <Content Include="Views\HKOWebViews\Poslodavac\Index.cshtml" />
+    <Content Include="Views\Korisnik\_KorisnikOdabirOdabranaZanimanja.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\HKOWebControllers\Administracija\" />
-    <Folder Include="Controllers\HKOWebControllers\Poslodavac\" />
+    <Folder Include="Models\HKOWebModels\Poslodavac\" />
     <Folder Include="Views\HKOWebViews\Administracija\" />
-    <Folder Include="Views\HKOWebViews\Poslodavac\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -586,20 +576,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\ApplicationDbContext\201604230856174_Initial.resx">
-      <DependentUpon>201604230856174_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ApplicationDbContext\201604231048333_Initial1.resx">
-      <DependentUpon>201604231048333_Initial1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ApplicationDbContext\201604251522041_MigrationAdresa.resx">
-      <DependentUpon>201604251522041_MigrationAdresa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ApplicationDbContext\201604281519059_UserProfileInfo seperated.resx">
-      <DependentUpon>201604281519059_UserProfileInfo seperated.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

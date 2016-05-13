@@ -1,5 +1,6 @@
 ﻿using HKOWebMVC4.DAL.Repository.UserRepositories;
 using HKOWebMVC4.Models;
+using HKOWebMVC4.Models.HKOWebModels.Korisnik;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,16 @@ namespace HKOWebMVC4.DAL.Repository.UserServices
         public ApplicationUser updateUserProfileInfo(ApplicationUser user, ApplicationUser newUser)
         {
             return userRepo.updateUserProfileInfo(user, newUser);
+        }
+
+        public List<KorisnikOdabranaZanimanja> getSelectedProffesionForCurrentUser()
+        {
+            return userRepo.getSelectedProffesionForCurrentUser();
+        }
+
+        public List<KorisnikOdabranaZanimanja> getSelectedProffesionsForEmployer(UserProfileInfo user)
+        {
+            return userRepo.getSelectedProffesionsForUser(user);
         }
     }
 }
