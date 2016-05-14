@@ -16,6 +16,7 @@ namespace HKOWebMVC4.DAL.Repository.UserRepositories
         private static ApplicationDbContext dbContext = new ApplicationDbContext();
         private static UserStore<ApplicationUser> userStore = new UserStore<ApplicationUser>(dbContext);
         private static UserManager<ApplicationUser> userManager = new UserManager<ApplicationUser>(userStore);
+        private HKOPodaciService.HKOPodaciService HKOPodaci = new HKOPodaciService.HKOPodaciService();
         #endregion
 
         #region methods
@@ -120,6 +121,19 @@ namespace HKOWebMVC4.DAL.Repository.UserRepositories
             {
                 throw new HKOWebRuntimeException("Spremanje odabranih zanimanja za korisnika nije uspjelo! Razlog:\n" + tException.Message);
             }
+        }
+
+        public List<UserProfileInfo> fetchUsersByProffesionsList(List<KorisnikOdabranaZanimanja> wantedProffesions)
+        {
+            List<int> proffesionsIdList = new List<int>();
+            foreach(KorisnikOdabranaZanimanja zanimanje in wantedProffesions)
+            {
+                proffesionsIdList.Add(zanimanje.zanimanjeId);
+            }
+            var query = dbContext.KorisnikOdabranaZanimanja;
+            var userList =query.Where(o => proffesionsIdList.Contains(o.zanimanjeId))
+                .Select(o => o.userProfile).Distinct().ToList() ;
+            return userList;
         }
 
         #endregion

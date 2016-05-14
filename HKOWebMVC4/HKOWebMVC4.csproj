@@ -567,6 +567,7 @@
     <Content Include="Views\HKOWebViews\ZavrseniStudent\RadnaMjesta.cshtml" />
     <Content Include="Views\HKOWebViews\Poslodavac\Index.cshtml" />
     <Content Include="Views\Korisnik\_KorisnikOdabirOdabranaZanimanja.cshtml" />
+    <Content Include="Views\HKOWebViews\Poslodavac\Kandidati.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,7 @@
 ﻿using HKOWebMVC4.DAL.HKOPodaciService;
 using HKOWebMVC4.DAL.Repository.UserServices;
 using HKOWebMVC4.DAL.Service.PoslodavacService;
+using HKOWebMVC4.Models;
 using HKOWebMVC4.Models.HKOWebModels.Korisnik;
 using System;
 using System.Collections.Generic;
@@ -29,76 +30,11 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.Poslodavac
             return View("~/Views/HKOWebViews/Poslodavac/Index.cshtml", odabirZanimanja);
         }
 
-        // GET: Poslodavac/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Kandidati()
         {
-            return View();
-        }
-
-        // GET: Poslodavac/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Poslodavac/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Poslodavac/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Poslodavac/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Poslodavac/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Poslodavac/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            List<KorisnikOdabranaZanimanja> trazenaZanimanja = userService.getSelectedProffesionForCurrentUser();
+            List<UserProfileInfo> kandidati = userService.fetchUsersByProffesionsList(trazenaZanimanja);
+            return View("~/Views/HKOWebViews/Poslodavac/Kandidati.cshtml", kandidati);
         }
     }
 }

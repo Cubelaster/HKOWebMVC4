@@ -65,5 +65,10 @@ namespace HKOWebMVC4.DAL.Repository.UserServices
             }
             return ajaxResponse;
         }
+
+        public List<UserProfileInfo> fetchUsersByProffesionsList(List<KorisnikOdabranaZanimanja> odabranaZanimanja)
+        {
+            return userRepo.fetchUsersByProffesionsList(odabranaZanimanja);
+        } 
     }
 }

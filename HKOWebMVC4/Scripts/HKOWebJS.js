@@ -11,6 +11,7 @@ $(document).ready(function () {
     $('#obavezniTable').DataTable();
     $('#izborniTable').DataTable();
     $('#studijskiProgramiTable').DataTable();
+    $('#kandidatiTable').DataTable();
 
     $(".saveProffesionsChoice").click(function (event) {
         saveOdabranaZanimanja();
