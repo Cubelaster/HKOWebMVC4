@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace HKOWebMVC4.Controllers.HKOWebControllers.Poslodavac
 {
+    [Authorize]
     public class PoslodavacController : Controller
     {
 
