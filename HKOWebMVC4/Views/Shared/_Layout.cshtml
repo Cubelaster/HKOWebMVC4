@@ -44,6 +44,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
+    @*Ako se u BundleConfigu isključi HKOWebJS onda se može ovdje ručno uključit. Također, u Bundlu postoji Optimize opcija - minimize*@
+    @*@Scripts.Render("~/Scripts/HKOWebJS.js")*@
     @RenderSection("scripts", required: false)
 
     @* Datatables *@

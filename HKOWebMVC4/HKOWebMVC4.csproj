@@ -201,9 +201,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HKOWebControllers\BuduciStudent\BuduciStudentController.cs" />
     <Compile Include="Controllers\HKOWebControllers\Poslodavac\PoslodavacController.cs" />
+    <Compile Include="Controllers\HKOWebControllers\User\UserController.cs" />
     <Compile Include="Controllers\HKOWebControllers\ZavrseniStudent\ZavrseniStudentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAL\HKOPodaciService\HKOPodaciService.cs" />
     <Compile Include="DAL\Repository\PoslodavacRepository\PoslodavacRepository.cs" />
     <Compile Include="DAL\Repository\UserRepositories\UserRepository.cs" />
     <Compile Include="DAL\Service\PoslodavacService\PoslodavacService.cs" />
@@ -232,6 +234,8 @@
     <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HKOWebModels\AjaxModels\_AjaxResponseModel.cs" />
+    <Compile Include="Models\HKOWebModels\ExceptionModels\HKOWebRuntimeException.cs" />
     <Compile Include="Models\HKOWebModels\KolegijiPregled.cs" />
     <Compile Include="Models\HKOWebModels\Korisnik\KorisnikOdabirZanimanja.cs" />
     <Compile Include="Models\HKOWebModels\Korisnik\KorisnikOdabranaZanimanja.cs" />
@@ -569,6 +573,7 @@
     <Folder Include="Controllers\HKOWebControllers\Administracija\" />
     <Folder Include="Models\HKOWebModels\Poslodavac\" />
     <Folder Include="Views\HKOWebViews\Administracija\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

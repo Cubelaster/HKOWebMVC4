@@ -1,8 +1,8 @@
 ﻿@model HKOWebMVC4.Models.HKOWebModels.Korisnik.KorisnikOdabirZanimanja
 
-<h2>Odabir željenih zanimanja</h2>
+<h2>Odabir zanimanja</h2>
 
-@using (Ajax.BeginForm("Zanimanja", "Poslodavac", new AjaxOptions { UpdateTargetId = "_AjaxInfoMessage" }))
+@using (Ajax.BeginForm("Zanimanja", "Poslodavac", new AjaxOptions { UpdateTargetId = "_AjaxInfoMessage" }, new { id = "odabirZanimanjaForm" }))
 {
     int itemCount = 0;
     bool choiceChecked = false;
@@ -19,8 +19,8 @@
                         if (Model.odabranaZanimanja.Count <= 0)
                         {
                             <li>
-                                <input id=@Html.Raw(entry.Key) type="checkbox" value=@Html.Raw(entry.Key) />
-                                <label for=@Html.Raw(entry.Key)>@Html.Raw(entry.Value)</label>
+                                <input id=@Html.Raw(entry.Key) class="zanimanjeId" type="checkbox" value=@Html.Raw(entry.Key) />
+                                <label for=@Html.Raw(entry.Key) class="zanimanjeNaziv">@Html.Raw(entry.Value)</label>
                             </li>
                         }
                         else
@@ -38,16 +38,16 @@
                             }
                             if (choiceChecked)
                             {
-                                <li>
-                                    <input id=@Html.Raw(entry.Key) type="checkbox" value=@Html.Raw(entry.Key) checked="checked" />
-                                    <label for=@Html.Raw(entry.Key)>@Html.Raw(entry.Value)</label>
+                                <li class="chosenProffesion">
+                                    <input id=@Html.Raw(entry.Key) class="zanimanjeId" type="checkbox" value=@Html.Raw(entry.Key) checked="checked" />
+                                    <label for=@Html.Raw(entry.Key) class="zanimanjeNaziv">@Html.Raw(entry.Value)</label>
                                 </li>
                             }
                             else
                             {
                                 <li>
-                                    <input id=@Html.Raw(entry.Key) type="checkbox" value=@Html.Raw(entry.Key) />
-                                    <label for=@Html.Raw(entry.Key)>@Html.Raw(entry.Value)</label>
+                                    <input id=@Html.Raw(entry.Key) class="zanimanjeId" type="checkbox" value=@Html.Raw(entry.Key) />
+                                    <label for=@Html.Raw(entry.Key) class="zanimanjeNaziv">@Html.Raw(entry.Value)</label>
                                 </li>
                             }
                             choiceChecked = false;

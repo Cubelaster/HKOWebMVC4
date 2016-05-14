@@ -1,4 +1,5 @@
-﻿using HKOWebMVC4.DAL.Repository.UserServices;
+﻿using HKOWebMVC4.DAL.HKOPodaciService;
+using HKOWebMVC4.DAL.Repository.UserServices;
 using HKOWebMVC4.DAL.Service.PoslodavacService;
 using HKOWebMVC4.Models.HKOWebModels.Korisnik;
 using System;
@@ -16,14 +17,14 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.Poslodavac
         #region members
         private static HKOPodaci HKOData = new HKOPodaci();
         private static UserService userService = new UserService();
+        private static HKOPodaciService HKODataService = new HKOPodaciService();
         #endregion
 
         // GET: Poslodavac
         public ActionResult Index()
         {
-            ObjectResult<ZanimanjeStudiji_Result> zanimanjeStudijResult = HKOData.ZanimanjeStudiji();
             KorisnikOdabirZanimanja odabirZanimanja = new KorisnikOdabirZanimanja();
-            odabirZanimanja.svaZanimanja = zanimanjeStudijResult.Select(z => new { z.ZanimanjeID, z.Zanimanje }).Distinct().ToDictionary(z => z.ZanimanjeID, z => z.Zanimanje);
+            odabirZanimanja.svaZanimanja = HKODataService.fetchDistinctZanimanjaDictionary();
             odabirZanimanja.odabranaZanimanja = userService.getSelectedProffesionForCurrentUser();
             return View("~/Views/HKOWebViews/Poslodavac/Index.cshtml", odabirZanimanja);
         }

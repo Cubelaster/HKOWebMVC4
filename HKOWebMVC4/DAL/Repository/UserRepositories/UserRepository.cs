@@ -6,6 +6,7 @@ using HKOWebMVC4.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
 using HKOWebMVC4.Models.HKOWebModels.Korisnik;
+using HKOWebMVC4.Models.HKOWebModels.ExceptionModels;
 
 namespace HKOWebMVC4.DAL.Repository.UserRepositories
 {
@@ -20,40 +21,105 @@ namespace HKOWebMVC4.DAL.Repository.UserRepositories
         #region methods
         public ApplicationUser fetchUserById(string userId)
         {
-            return userManager.FindById(userId);
+            try
+            {
+                return userManager.FindById(userId);
+            }
+            catch (Exception tException)
+            {
+                throw new HKOWebRuntimeException("Dohvat korisnika po ID-u nije uspio! Razlog:\n" + tException.Message);
+            }
         }
 
         public ApplicationUser fetchCurrentUser()
         {
-            ApplicationUser user = userManager.FindById( HttpContext.Current.User.Identity.GetUserId() );
-            return user;
+            try
+            {
+                ApplicationUser user = userManager.FindById(HttpContext.Current.User.Identity.GetUserId());
+                return user;
+            }
+            catch (Exception tException)
+            {
+                throw new HKOWebRuntimeException("Dohvat trenutnog korisnika nije uspio! Razlog:\n" + tException.Message);
+            }
         }
 
         public ApplicationUser updateUserProfileInfo(ApplicationUser user, ApplicationUser newUser)
         {
-            user.UserProfileInfo.Ime = newUser.UserProfileInfo.Ime;
-            user.UserProfileInfo.Prezime = newUser.UserProfileInfo.Prezime;
-            user.UserProfileInfo.JMBAG = newUser.UserProfileInfo.JMBAG;
-            user.UserProfileInfo.Država = newUser.UserProfileInfo.Država;
-            user.UserProfileInfo.Grad = newUser.UserProfileInfo.Grad;
-            user.UserProfileInfo.Adresa = newUser.UserProfileInfo.Adresa;
-            dbContext.UserProfileInfo.Attach(user.UserProfileInfo);
-            dbContext.Entry(user.UserProfileInfo).State = System.Data.Entity.EntityState.Modified;
-            dbContext.SaveChanges();
-            return user;
+            try
+            { 
+                user.UserProfileInfo.Ime = newUser.UserProfileInfo.Ime;
+                user.UserProfileInfo.Prezime = newUser.UserProfileInfo.Prezime;
+                user.UserProfileInfo.JMBAG = newUser.UserProfileInfo.JMBAG;
+                user.UserProfileInfo.Država = newUser.UserProfileInfo.Država;
+                user.UserProfileInfo.Grad = newUser.UserProfileInfo.Grad;
+                user.UserProfileInfo.Adresa = newUser.UserProfileInfo.Adresa;
+                dbContext.UserProfileInfo.Attach(user.UserProfileInfo);
+                dbContext.Entry(user.UserProfileInfo).State = System.Data.Entity.EntityState.Modified;
+                dbContext.SaveChanges();
+                return user;
+            }
+            catch (Exception tException)
+            {
+                throw new HKOWebRuntimeException("Izmjena podataka korisnika nije uspjela! Razlog:\n" + tException.Message);
+            }
         }
 
         public List<KorisnikOdabranaZanimanja> getSelectedProffesionForCurrentUser()
         {
-            var currentUser = fetchCurrentUser().UserProfileInfo;
-            var poZanimanjaList = getSelectedProffesionsForUser(currentUser);
-            return poZanimanjaList;
+            try
+            {
+                var currentUser = fetchCurrentUser().UserProfileInfo;
+                var poZanimanjaList = getSelectedProffesionsForUser(currentUser);
+                return poZanimanjaList;
+            }
+            catch (Exception tException)
+            {
+                throw new HKOWebRuntimeException("Dohvat odabranih zanimanja za trenutnog korisnika nije uspio! Razlog:\n" + tException.Message);
+            }
         }
 
         public List<KorisnikOdabranaZanimanja> getSelectedProffesionsForUser(UserProfileInfo user)
         {
-            var poZanimanjaList = dbContext.KorisnikOdabranaZanimanja.Where(p => p.userProfile.Id == user.Id).ToList();
-            return poZanimanjaList;
+            try
+            {
+                var poZanimanjaList = dbContext.KorisnikOdabranaZanimanja.Where(p => p.userProfile.Id == user.Id).ToList();
+                return poZanimanjaList;
+            }
+            catch (Exception tException)
+            {
+                throw new HKOWebRuntimeException("Dohvat odabranih zanimanja za određenog korisnika nije uspio! Razlog:\n" + tException.Message);
+            }
+        }
+
+        public void removeSelectedProffesionsForUser(UserProfileInfo user)
+        {
+            try
+            {
+                dbContext.KorisnikOdabranaZanimanja.RemoveRange(getSelectedProffesionsForUser(user));
+                dbContext.SaveChanges();
+            }
+            catch (Exception tException)
+            {
+                throw new HKOWebRuntimeException("Brisanje odabranih zanimanja za korisnika nije uspjelo! Razlog:\n" + tException.Message);
+            }
+        }
+
+        public void setSelectedProffesionsForUser(List<KorisnikOdabranaZanimanja> proffesionsList, UserProfileInfo user)
+        {
+            foreach(KorisnikOdabranaZanimanja odabranoZanimanje in proffesionsList)
+            {
+                odabranoZanimanje.userProfile = user;
+            }
+            try
+            {
+                dbContext.KorisnikOdabranaZanimanja.AddRange(proffesionsList);
+                dbContext.SaveChanges();
+            }
+            catch (Exception tException)
+            {
+                throw new HKOWebRuntimeException("Spremanje odabranih zanimanja za korisnika nije uspjelo! Razlog:\n" + tException.Message);
+            }
         }
 
         #endregion

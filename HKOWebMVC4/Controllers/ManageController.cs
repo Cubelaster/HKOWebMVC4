@@ -9,6 +9,7 @@ using Microsoft.Owin.Security;
 using HKOWebMVC4.Models;
 using HKOWebMVC4.DAL.Repository.UserServices;
 using Microsoft.AspNet.Identity.EntityFramework;
+using HKOWebMVC4.Models.HKOWebModels.Korisnik;
 
 namespace HKOWebMVC4.Controllers
 {
@@ -76,7 +77,8 @@ namespace HKOWebMVC4.Controllers
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                odabirZanimanja = new KorisnikOdabirZanimanja(currentUser.UserProfileInfo)
             };
             return View(model);
         }
