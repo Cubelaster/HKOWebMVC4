@@ -18,7 +18,6 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.BuduciStudent
         // GET: BuduciStudent
         public ActionResult Index()
         {
-            ISVU_API.Isvu.UpisniListovi("22");
             ObjectResult<ZanimanjeStudiji_Result> zanimanjeStudijResult = HKOData.ZanimanjeStudiji();
             return View("~/Views/HKOWebViews/BuduciStudent/Index.cshtml", zanimanjeStudijResult);
         }
