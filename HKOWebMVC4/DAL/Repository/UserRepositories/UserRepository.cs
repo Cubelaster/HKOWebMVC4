@@ -32,6 +32,12 @@ namespace HKOWebMVC4.DAL.Repository.UserRepositories
             }
         }
 
+        public ApplicationUser fetchUserByUPId(int userProfileId)
+        {
+            ApplicationUser user = dbContext.Users.Where(u => u.UserProfileInfo.Id == userProfileId).First();
+            return user;
+        }
+
         public ApplicationUser fetchCurrentUser()
         {
             try

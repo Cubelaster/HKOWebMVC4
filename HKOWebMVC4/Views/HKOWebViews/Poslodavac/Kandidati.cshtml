@@ -48,8 +48,18 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Adresa)
                 </td>
-                <td>
-                    @Html.ActionLink("Detalji", "Index", "Manage")
+                <td style="width:100px">
+                    <div class="dropdown btn-group btn-group-sm">
+                        <button type="button" class="btn btn-disabled">Pregled:</button>
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Detalji", "Index", new { controller = "Manage" , studentId = item.Id})</li>
+                            <li>@Html.ActionLink("Kompetencije", "Kompetencije", new { controller = "Studenti", JMBAG = item.JMBAG })
+                        </ul>
+                    </div>
                 </td>
             </tr>
         }

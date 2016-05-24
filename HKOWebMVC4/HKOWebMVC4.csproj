@@ -208,6 +208,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HKOWebControllers\BuduciStudent\BuduciStudentController.cs" />
     <Compile Include="Controllers\HKOWebControllers\Poslodavac\PoslodavacController.cs" />
+    <Compile Include="Controllers\HKOWebControllers\StudentiController.cs" />
     <Compile Include="Controllers\HKOWebControllers\User\UserController.cs" />
     <Compile Include="Controllers\HKOWebControllers\ZavrseniStudent\ZavrseniStudentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -234,6 +235,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HKOPodaci.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="KolegijKompetencije_Result.cs">
+      <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
     <Compile Include="KolegijSkupIshodaUcenja_Result.cs">
       <DependentUpon>HKOPodaci.tt</DependentUpon>
@@ -581,6 +585,7 @@
     <Folder Include="Controllers\HKOWebControllers\Administracija\" />
     <Folder Include="Models\HKOWebModels\Poslodavac\" />
     <Folder Include="Views\HKOWebViews\Administracija\" />
+    <Folder Include="Views\Studenti\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>

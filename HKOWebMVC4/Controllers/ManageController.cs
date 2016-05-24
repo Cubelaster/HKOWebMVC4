@@ -56,7 +56,7 @@ namespace HKOWebMVC4.Controllers
 
         //
         // GET: /Manage/Index
-        public async Task<ActionResult> Index(ManageMessageId? message)
+        public async Task<ActionResult> Index(ManageMessageId? message, int? studentId)
         {
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
@@ -68,17 +68,27 @@ namespace HKOWebMVC4.Controllers
                 : message == ManageMessageId.UpdateSuccess ? "Izmjena uspješna!"
                 : "";
 
-            var userId = User.Identity.GetUserId();
-            ApplicationUser currentUser = userService.fetchUserById(userId);
-            var model = new IndexViewModel
+            var model = new IndexViewModel();
+            ApplicationUser selectedUser = new ApplicationUser();
+
+            if (studentId != null)
             {
-                user = currentUser,
+                selectedUser = userService.fetchUserByUPId(studentId ?? default(int));
+            }
+            else
+            {
+                var userId = User.Identity.GetUserId();
+                selectedUser = userService.fetchUserById(userId);
+            }
+            model = new IndexViewModel
+            {
+                user = selectedUser,
                 HasPassword = HasPassword(),
-                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
-                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
-                Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
-                odabirZanimanja = new KorisnikOdabirZanimanja(currentUser.UserProfileInfo)
+                PhoneNumber = await UserManager.GetPhoneNumberAsync(selectedUser.Id),
+                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(selectedUser.Id),
+                Logins = await UserManager.GetLoginsAsync(selectedUser.Id),
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(selectedUser.Id),
+                odabirZanimanja = new KorisnikOdabirZanimanja(selectedUser.UserProfileInfo)
             };
             return View(model);
         }

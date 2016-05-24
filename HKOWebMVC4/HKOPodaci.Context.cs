@@ -136,5 +136,14 @@ namespace HKOWebMVC4
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<StudijskiProgramRadnaMjesta_Result>("StudijskiProgramRadnaMjesta", studijskiProgramIDParameter);
         }
+    
+        public virtual ObjectResult<KolegijKompetencije_Result> KolegijKompetencije(Nullable<int> kolegijISVUSifra)
+        {
+            var kolegijISVUSifraParameter = kolegijISVUSifra.HasValue ?
+                new ObjectParameter("KolegijISVUSifra", kolegijISVUSifra) :
+                new ObjectParameter("KolegijISVUSifra", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KolegijKompetencije_Result>("KolegijKompetencije", kolegijISVUSifraParameter);
+        }
     }
 }
