@@ -6,7 +6,7 @@
     <edmx:StorageModels>
     <Schema Namespace="HKOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="KolegijKompetencije" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
-          <Parameter Name="KolegijISVUSifra" Type="int" Mode="In" />
+          <Parameter Name="KolegijISVUSifra" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="KolegijSkupIshodaUcenja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
           <Parameter Name="KolegijID" Type="int" Mode="In" />
@@ -85,7 +85,7 @@
           <Parameter Name="StudijskiProgramID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="KolegijKompetencije" ReturnType="Collection(HKOModel.KolegijKompetencije_Result)">
-          <Parameter Name="KolegijISVUSifra" Mode="In" Type="Int32" />
+          <Parameter Name="KolegijISVUSifra" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="KolegijSkupIshodaUcenja_Result">

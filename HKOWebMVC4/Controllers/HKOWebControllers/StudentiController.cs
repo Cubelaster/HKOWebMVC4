@@ -26,7 +26,7 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers
             HashSet<KolegijKompetencije_Result> setKompetencija = new HashSet<KolegijKompetencije_Result>();
             foreach(upisaniPredmet predmeti in listaPredmeta)
             {
-                ObjectResult<KolegijKompetencije_Result> listaKompetencija = hkoPodaci.KolegijKompetencije(128193);
+                ObjectResult<KolegijKompetencije_Result> listaKompetencija = hkoPodaci.KolegijKompetencije("128193'");
                 setKompetencija.Union(listaKompetencija);
             }
             return View();
