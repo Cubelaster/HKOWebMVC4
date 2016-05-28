@@ -16,40 +16,40 @@ namespace HKOWebMVC4
         public int IDKompetencija { get; set; }
         public string Kompetencija { get; set; }
 
-        public override bool Equals(System.Object obj)
-        {
-            // If parameter is null return false.
-            if (obj == null)
-            {
-                return false;
-            }
+        //public override bool Equals(System.Object obj)
+        //{
+        //    // If parameter is null return false.
+        //    if (obj == null)
+        //    {
+        //        return false;
+        //    }
 
-            // If parameter cannot be cast to Point return false.
-            KolegijKompetencije_Result p = obj as KolegijKompetencije_Result;
-            if ((System.Object)p == null)
-            {
-                return false;
-            }
+        //    // If parameter cannot be cast to Point return false.
+        //    KolegijKompetencije_Result p = obj as KolegijKompetencije_Result;
+        //    if ((System.Object)p == null)
+        //    {
+        //        return false;
+        //    }
 
-            // Return true if the fields match:
-            return (IDKompetencija == p.IDKompetencija);
-        }
+        //    // Return true if the fields match:
+        //    return (IDKompetencija == p.IDKompetencija);
+        //}
 
-        public bool Equals(KolegijKompetencije_Result p)
-        {
-            // If parameter is null return false:
-            if ((object)p == null)
-            {
-                return false;
-            }
+        //public bool Equals(KolegijKompetencije_Result p)
+        //{
+        //    // If parameter is null return false:
+        //    if ((object)p == null)
+        //    {
+        //        return false;
+        //    }
 
-            // Return true if the fields match:
-            return (IDKompetencija == p.IDKompetencija);
-        }
+        //    // Return true if the fields match:
+        //    return (IDKompetencija == p.IDKompetencija);
+        //}
 
-        public override int GetHashCode()
-        {
-            return IDKompetencija;
-        }
+        //public override int GetHashCode()
+        //{
+        //    return IDKompetencija;
+        //}
     }
 }

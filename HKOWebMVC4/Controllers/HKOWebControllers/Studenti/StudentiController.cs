@@ -24,13 +24,26 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.Studenti
 
             List<ISVU_API.DetaljniUpisniList.upisaniPredmet> listaPredmeta = ISVU_API.Isvu.UpisniListovi(JMBAG);
             HashSet<KolegijKompetencije_Result> setKompetencija = new HashSet<KolegijKompetencije_Result>();
+
             foreach(upisaniPredmet predmeti in listaPredmeta)
             {
                 ObjectResult<KolegijKompetencije_Result> listaKompetencija = hkoPodaci.KolegijKompetencije("128193");
-
+                
                 foreach (KolegijKompetencije_Result kompetencija in listaKompetencija)
                 {
-                    setKompetencija.Add(kompetencija);
+                    bool postoji = false;
+                    foreach(KolegijKompetencije_Result spremljeneKompetencije in setKompetencija.ToList())
+                    {
+                        if(spremljeneKompetencije.IDKompetencija == kompetencija.IDKompetencija)
+                        {
+                            postoji = true;
+                            break;
+                        }
+                    }
+                    if (!postoji)
+                    {
+                        setKompetencija.Add(kompetencija);
+                    }                    
                 }
             }
             return View("~/Views/HKOWebViews/Studenti/StudentiKompetencije.cshtml", setKompetencija);
