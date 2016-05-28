@@ -208,7 +208,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HKOWebControllers\BuduciStudent\BuduciStudentController.cs" />
     <Compile Include="Controllers\HKOWebControllers\Poslodavac\PoslodavacController.cs" />
-    <Compile Include="Controllers\HKOWebControllers\StudentiController.cs" />
+    <Compile Include="Controllers\HKOWebControllers\Studenti\StudentiController.cs" />
     <Compile Include="Controllers\HKOWebControllers\User\UserController.cs" />
     <Compile Include="Controllers\HKOWebControllers\ZavrseniStudent\ZavrseniStudentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -577,16 +577,16 @@
     <Content Include="Views\HKOWebViews\ZavrseniStudent\KljucniPoslovi.cshtml" />
     <Content Include="Views\HKOWebViews\ZavrseniStudent\RadnaMjesta.cshtml" />
     <Content Include="Views\HKOWebViews\Poslodavac\Index.cshtml" />
-    <Content Include="Views\Korisnik\_KorisnikOdabirOdabranaZanimanja.cshtml" />
+    <Content Include="Views\HKOWebViews\Korisnik\_KorisnikOdabirOdabranaZanimanja.cshtml" />
     <Content Include="Views\HKOWebViews\Poslodavac\Kandidati.cshtml" />
+    <Content Include="Views\HKOWebViews\Studenti\StudentiKompetencije.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\HKOWebControllers\Administracija\" />
     <Folder Include="Models\HKOWebModels\Poslodavac\" />
     <Folder Include="Views\HKOWebViews\Administracija\" />
-    <Folder Include="Views\Studenti\" />
-    <Folder Include="Views\User\" />
+    <Folder Include="Views\HKOWebViews\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

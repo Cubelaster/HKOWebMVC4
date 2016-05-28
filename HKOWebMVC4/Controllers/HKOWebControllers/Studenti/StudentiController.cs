@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace HKOWebMVC4.Controllers.HKOWebControllers
+namespace HKOWebMVC4.Controllers.HKOWebControllers.Studenti
 {
     public class StudentiController : Controller
     {
@@ -27,9 +27,13 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers
             foreach(upisaniPredmet predmeti in listaPredmeta)
             {
                 ObjectResult<KolegijKompetencije_Result> listaKompetencija = hkoPodaci.KolegijKompetencije("128193");
-                setKompetencija.Union(listaKompetencija);
+
+                foreach (KolegijKompetencije_Result kompetencija in listaKompetencija)
+                {
+                    setKompetencija.Add(kompetencija);
+                }
             }
-            return View();
+            return View("~/Views/HKOWebViews/Studenti/StudentiKompetencije.cshtml", setKompetencija);
         }
     }
 }

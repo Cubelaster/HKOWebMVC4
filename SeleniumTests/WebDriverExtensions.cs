@@ -22,12 +22,14 @@ namespace SeleniumTests
         }
 
 
-
+        /*
+         * Metoda uzima By i pretražuje elemente s proslijeđenim waitom.
+         * */
         public static ReadOnlyCollection<IWebElement> FindElements(this IWebDriver driver, By by, int timeoutInSeconds)
         {
             if (timeoutInSeconds > 0)
             {
-                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds)); // explicit wait
                 return wait.Until(drv => drv.FindElements(by));
             }
             return driver.FindElements(by);
