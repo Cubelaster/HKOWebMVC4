@@ -588,6 +588,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\HKOWebControllers\Administracija\" />
+    <Folder Include="ISVU_API\" />
     <Folder Include="Models\HKOWebModels\Poslodavac\" />
     <Folder Include="Views\HKOWebViews\Administracija\" />
     <Folder Include="Views\HKOWebViews\User\" />
