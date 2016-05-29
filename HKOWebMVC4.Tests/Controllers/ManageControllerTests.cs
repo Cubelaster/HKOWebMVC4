@@ -1,11 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using HKOWebMVC4.Controllers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using NUnit.Framework;
 
 namespace HKOWebMVC4.Controllers.Tests
 {
@@ -25,9 +21,9 @@ namespace HKOWebMVC4.Controllers.Tests
             // Assert
             var resultRes = result.Result;
 
-            //Assert.AreEqual("Your application description page.", result.Result  ViewBag.StatusMessage);
-
-            Assert.Fail();
+            //Assert.AreEqual("Your application description page.", result.Result  ViewBag.StatusMessage)
+            NUnit.Framework.Assert.NotNull(resultRes);
+            //Assert.Fail();
         }
     }
 }

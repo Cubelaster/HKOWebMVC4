@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace HKOWebMVC4.DAL.Repository.UserServices
 {
-    class UserService
+    public class UserService
     {
         private static UserRepository userRepo = new UserRepository();
         private _AjaxResponseModel ajaxResponse = new _AjaxResponseModel();
