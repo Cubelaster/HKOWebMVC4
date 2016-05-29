@@ -1,4 +1,5 @@
 ﻿using HKOWebMVC4.Models;
+using Moq;
 using NUnit.Framework;
 
 namespace HKOWebMVC4.DAL.Repository.UserRepositories.Tests
@@ -6,14 +7,35 @@ namespace HKOWebMVC4.DAL.Repository.UserRepositories.Tests
     [TestFixture]
     public class UserRepositoryTests
     {
+
+        UserRepository sut = new UserRepository();
+
         [Test]
         public void fetchUserByIdTest()
         {
-            var sut = new UserRepository();
             ApplicationUser user = sut.fetchUserByUPId(1);
+            Assert.That(user.UserProfileInfo.Id, Is.EqualTo(1));
+        }
 
-            Assert.That(user.UserProfileInfo.Id.Equals(1) );
-            //Microsoft.VisualStudio.TestTools.UnitTesting.Assert.Fail();
+        [Test]
+        public void updateUserProfileInfoRealTest()
+        {
+            ApplicationUser user = sut.fetchUserByUPId(1);
+            ApplicationUser newUser = user;
+            newUser.UserProfileInfo.Ime = "Denis";
+            user = sut.updateUserProfileInfo(user, newUser);
+            Assert.That(user.UserProfileInfo.Ime, Is.EqualTo("Denis"));
+        }
+
+        [Test]
+        public void returnTrueMockTest()
+            // Ukoliko se želi koristiti Moq i Mockanje, metoda koja se poziva mora biti označena kao
+            // virtual zbog Setup metode - Setup zahtjeva virtual da bi je mogla overridat
+        {
+            var mockedSUT = new Mock<UserRepository>();
+            mockedSUT.Setup(u => u.returnTrue(It.IsAny<bool>())).Returns(false);
+            bool result = mockedSUT.Object.returnTrue(true);
+            Assert.That(result, Is.False);
         }
 
         //[TestMethod()]

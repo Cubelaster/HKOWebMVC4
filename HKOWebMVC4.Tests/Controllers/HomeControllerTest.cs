@@ -1,54 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using HKOWebMVC4;
+﻿using System.Web.Mvc;
 using HKOWebMVC4.Controllers;
+using NUnit.Framework;
+using Moq;
+using TestStack.FluentMVCTesting;
 
 namespace HKOWebMVC4.Tests.Controllers
 {
-    [TestClass]
+    [TestFixture]
     public class HomeControllerTest
     {
-        [TestMethod]
+
+        HomeController controllerSUT = new HomeController();
+
+        [Test]
         public void Index()
         {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
+            controllerSUT.WithCallTo(h => h.Index()).ShouldRenderDefaultView();
         }
 
-        [TestMethod]
+        [Test]
         public void About()
         {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.About() as ViewResult;
-
-            // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            controllerSUT.WithCallTo(h => h.About()).ShouldRenderDefaultView();
         }
 
-        [TestMethod]
+        [Test]
         public void Contact()
         {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.Contact() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
+            controllerSUT.WithCallTo(h => h.Contact()).ShouldRenderDefaultView();
         }
     }
 }

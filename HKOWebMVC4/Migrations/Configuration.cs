@@ -5,15 +5,14 @@ namespace HKOWebMVC4.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<HKOWebMVC4.HKOPodaci>
+    internal sealed class Configuration : DbMigrationsConfiguration<HKOWebMVC4.Models.ApplicationDbContext>
     {
         public Configuration()
         {
-            //koga briga za migracije
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(HKOWebMVC4.HKOPodaci context)
+        protected override void Seed(HKOWebMVC4.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

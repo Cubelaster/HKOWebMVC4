@@ -242,6 +242,10 @@
     <Compile Include="KolegijSkupIshodaUcenja_Result.cs">
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ApplicationDbContext\201605290958256_Prilikom testiranja.cs" />
+    <Compile Include="Migrations\ApplicationDbContext\201605290958256_Prilikom testiranja.Designer.cs">
+      <DependentUpon>201605290958256_Prilikom testiranja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -594,6 +598,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ApplicationDbContext\201605290958256_Prilikom testiranja.resx">
+      <DependentUpon>201605290958256_Prilikom testiranja.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

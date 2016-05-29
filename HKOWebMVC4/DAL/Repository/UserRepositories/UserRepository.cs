@@ -142,6 +142,13 @@ namespace HKOWebMVC4.DAL.Repository.UserRepositories
             return userList;
         }
 
+        // Radi oglednog primjerka u testu
+        // Moq može mockati samo virtual metode preko Setup
+        public virtual bool returnTrue(bool krivo)
+        {
+            return krivo;
+        }
+
         #endregion
     }
 }
