@@ -276,6 +276,21 @@
     <Compile Include="StudijskiProgramRadnaMjesta_Result.cs">
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
+    <Compile Include="Views\HKOWebViews\Studenti\StudentiKompetencije.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentiKompetencije.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\About.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>About.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="ZanimanjeKljucniPoslovi_Result.cs">
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
@@ -547,9 +562,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\About.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>About.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -583,7 +604,10 @@
     <Content Include="Views\HKOWebViews\Poslodavac\Index.cshtml" />
     <Content Include="Views\HKOWebViews\Korisnik\_KorisnikOdabirOdabranaZanimanja.cshtml" />
     <Content Include="Views\HKOWebViews\Poslodavac\Kandidati.cshtml" />
-    <Content Include="Views\HKOWebViews\Studenti\StudentiKompetencije.cshtml" />
+    <Content Include="Views\HKOWebViews\Studenti\StudentiKompetencije.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>StudentiKompetencije.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
