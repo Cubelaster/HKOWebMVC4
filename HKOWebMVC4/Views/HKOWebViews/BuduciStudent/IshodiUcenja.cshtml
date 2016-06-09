@@ -1,15 +1,9 @@
 ﻿@model IEnumerable<HKOWebMVC4.KolegijSkupIshodaUcenja_Result>
 
-@{
-    ViewBag.Title = "IshodiUcenja";
-}
-
 <h2>Ishodi učenja</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+
+<table id ="ishodiUcenjaTable">
     <thead>
         <tr>
             <th>Ishod učenja</th>
@@ -27,6 +21,6 @@
     </tbody>
 </table>
 
-<a href=@ViewBag.back>Povratak</a>
+<a href=@ViewBag.back class = "btn btn-primary">Povratak</a>
 
 

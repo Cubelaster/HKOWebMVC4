@@ -30,9 +30,9 @@
                             <span class="sr-only">Toggle Dropdown</span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Kompetencije", "Kompetencije", new { controller = "ZavrseniStudent", zanimanjeId = item.StudijskiProgramID })</li>
-                            <li>@Html.ActionLink("Radna mjesta", "RadnaMjesta", new { controller = "ZavrseniStudent", zanimanjeId = item.StudijskiProgramID })</li>
-                            <li>@Html.ActionLink("Ključni poslovi", "KljucniPoslovi", new { controller = "ZavrseniStudent", zanimanjeId = item.StudijskiProgramID })</li>
+                            <li>@Html.ActionLink("Kompetencije", "Kompetencije", new { controller = "ZavrseniStudent", studijskiProgramId = item.StudijskiProgramID })</li>
+                            <li>@Html.ActionLink("Radna mjesta", "RadnaMjesta", new { controller = "ZavrseniStudent", studijskiProgramId = item.StudijskiProgramID })</li>
+                            <li>@Html.ActionLink("Ključni poslovi", "KljucniPoslovi", new { controller = "ZavrseniStudent", studijskiProgramId = item.StudijskiProgramID })</li>
                         </ul>
                     </div>
                 </td>

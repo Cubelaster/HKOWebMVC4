@@ -13,6 +13,7 @@ $(document).ready(function () {
     $('#studijskiProgramiTable').DataTable();
     $('#kandidatiTable').DataTable();
     $('#studentKompetencije').DataTable();
+    $('#ishodiUcenjaTable').DataTable();
 
     $(".saveProffesionsChoice").click(function (event) {
         saveOdabranaZanimanja();

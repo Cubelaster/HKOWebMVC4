@@ -14,7 +14,7 @@ namespace HKOWebMVC4.Tests
 
         static HKOWebMVCBrowserHost()
         {
-            Instance.Run("HKOWebMVC4", 4223);
+            Instance.Run("HKOWebMVC4", 4223, config => config.WithRouteConfig(RouteConfig.RegisterRoutes));
             RootUrl = Instance.Application.Browser.Url;
         }
     }

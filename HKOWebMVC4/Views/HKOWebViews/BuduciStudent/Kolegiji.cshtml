@@ -45,7 +45,7 @@
                 {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Kolegij)</td>
-                        <td>@Html.ActionLink("Ishodi učenja", "IshodiUcenja", new { controller = "BuduciStudent", kolegijId = item.KolegijID })</td>
+                        <td class="text-center">@Html.ActionLink("Ishodi učenja", "IshodiUcenja", new { controller = "BuduciStudent", kolegijId = item.KolegijID }, new { @class = "btn btn-success" })</td>
                     </tr>
                 }
             </tbody>
@@ -65,7 +65,7 @@
                 {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Kolegij)</td>
-                        <td>@Html.ActionLink("Ishodi učenja", "IshodiUcenja", new { controller = "BuduciStudent", kolegijId = item.KolegijID })</td>
+                        <td class="text-center">@Html.ActionLink("Ishodi učenja", "IshodiUcenja", new { controller = "BuduciStudent", kolegijId = item.KolegijID }, new { @class = "btn btn-success" })</td>
                     </tr>
                 }
             </tbody>
@@ -85,7 +85,7 @@
                 {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Kolegij)</td>
-                        <td>@Html.ActionLink("Ishodi učenja", "IshodiUcenja", new { controller = "BuduciStudent", kolegijId = item.KolegijID })</td>
+                        <td class="text-center">@Html.ActionLink("Ishodi učenja", "IshodiUcenja", new { controller = "BuduciStudent", kolegijId = item.KolegijID }, new { @class = "btn btn-success" })</td>
                     </tr>
                 }
             </tbody>
@@ -94,4 +94,4 @@
 </div>
 
 
-@Html.ActionLink("Povratak", "Index", new { controller = "BuduciStudent", @class = "btn btn-success" })
+@Html.ActionLink("Povratak", "Index", new { controller = "BuduciStudent" }, new { @class = "btn btn-primary" })
