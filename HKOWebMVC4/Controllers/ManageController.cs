@@ -10,6 +10,7 @@ using HKOWebMVC4.Models;
 using HKOWebMVC4.DAL.Repository.UserServices;
 using Microsoft.AspNet.Identity.EntityFramework;
 using HKOWebMVC4.Models.HKOWebModels.Korisnik;
+using MvcSiteMapProvider;
 
 namespace HKOWebMVC4.Controllers
 {
@@ -56,6 +57,7 @@ namespace HKOWebMVC4.Controllers
 
         //
         // GET: /Manage/Index
+        [MvcSiteMapNodeAttribute(Title = "Podaci korisnika", ParentKey = "Home", Key ="ManageUser")]
         public async Task<ActionResult> Index(ManageMessageId? message, int? studentId)
         {
             ViewBag.StatusMessage =

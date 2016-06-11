@@ -1,4 +1,5 @@
 ﻿using ISVU_API.DetaljniUpisniList;
+using MvcSiteMapProvider;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
@@ -19,6 +20,8 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.Studenti
             return View();
         }
 
+        [MvcSiteMapNodeAttribute(Title = "Kompetencije studenta", ParentKey = "PoslodavacIndex", Key = "StudentKompetencije",
+            DynamicNodeProvider = "HKOWebMVC4.SiteMapNodeProviders.StudentiProviders.JMBAGDeterminedDynamicNodeProvider, HKOWebMVC4")]
         public ActionResult Kompetencije(string JMBAG)
         {
 
@@ -46,6 +49,7 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.Studenti
                     }                    
                 }
             }
+            ViewBag.back = System.Web.HttpContext.Current.Request.UrlReferrer;
             return View("~/Views/HKOWebViews/Studenti/StudentiKompetencije.cshtml", setKompetencija);
         }
     }

@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HKOWebMVC4.Views
+namespace ASP
 {
     using System;
     using System.Collections.Generic;
@@ -28,6 +28,8 @@ namespace HKOWebMVC4.Views
     using System.Web.UI;
     using System.Web.WebPages;
     using HKOWebMVC4;
+    using MvcSiteMapProvider.Web.Html;
+    using MvcSiteMapProvider.Web.Html.Models;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/HKOWebViews/Studenti/StudentiKompetencije.cshtml")]
@@ -38,7 +40,16 @@ namespace HKOWebMVC4.Views
         }
         public override void Execute()
         {
-WriteLiteral("<h2>Kompetencije studenta</h2>\r\n\r\n<table");
+WriteLiteral("<h5>");
+
+            
+            #line 3 "..\..\Views\HKOWebViews\Studenti\StudentiKompetencije.cshtml"
+Write(Html.MvcSiteMap().SiteMapPath());
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" > Kompetencije</h5>\r\n\r\n<table");
 
 WriteLiteral(" class=\"table\"");
 
@@ -91,7 +102,21 @@ WriteLiteral("\r\n                </td>\r\n            </tr>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("    </tbody>\r\n</table>\r\n");
+WriteLiteral("    </tbody>\r\n</table>\r\n\r\n<a");
+
+WriteAttribute("href", Tuple.Create(" href=", 582), Tuple.Create("", 601)
+            
+            #line 25 "..\..\Views\HKOWebViews\Studenti\StudentiKompetencije.cshtml"
+, Tuple.Create(Tuple.Create("", 588), Tuple.Create<System.Object, System.Int32>(ViewBag.back
+            
+            #line default
+            #line hidden
+, 588), false)
+);
+
+WriteLiteral(" class=\"btn btn-primary\"");
+
+WriteLiteral(">Povratak</a>");
 
         }
     }

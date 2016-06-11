@@ -1,4 +1,5 @@
 ﻿using HKOWebMVC4.Models.HKOWebModels;
+using MvcSiteMapProvider;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
@@ -16,6 +17,7 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.BuduciStudent
         #endregion
 
         // GET: BuduciStudent
+        [MvcSiteMapNode(Title = "Budući student: Zanimanja i studiji", ParentKey = "Home", Key = "BuduciStudent")]
         public ActionResult Index()
         {
             ObjectResult<ZanimanjeStudiji_Result> zanimanjeStudijResult = HKOData.ZanimanjeStudiji();
@@ -23,6 +25,8 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.BuduciStudent
         }
 
         // GET: BuduciStudent/Details/5
+        [MvcSiteMapNodeAttribute(Title = "Radna mjesta", ParentKey = "BuduciStudent", Key = "BSRadnaMjesta", 
+            DynamicNodeProvider = "HKOWebMVC4.SiteMapNodeProviders.BuduciStudentProviders.ZanimanjeIDDeterminedDynamicNodeProvider, HKOWebMVC4")]
         public ActionResult RadnaMjesta(int? zanimanjeId)
         {
             ObjectResult<ZanimanjeRadnaMjesta_Result> radnaMjestaResult = HKOData.ZanimanjeRadnaMjesta(zanimanjeId);
@@ -30,6 +34,8 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.BuduciStudent
         }
 
         // GET: BuduciStudent/Create
+        [MvcSiteMapNodeAttribute(Title = "Ključni Poslovi", ParentKey = "BuduciStudent", Key = "BSKljucniPoslovi",
+            DynamicNodeProvider = "HKOWebMVC4.SiteMapNodeProviders.BuduciStudentProviders.ZanimanjeIDDeterminedDynamicNodeProvider, HKOWebMVC4")]
         public ActionResult KljucniPoslovi(int zanimanjeId)
         {
             ObjectResult<ZanimanjeKljucniPoslovi_Result> kljucniPosloviResult = HKOData.ZanimanjeKljucniPoslovi(zanimanjeId);
@@ -37,12 +43,16 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.BuduciStudent
         }
 
         // GET: BuduciStudent/Edit/5
+        [MvcSiteMapNodeAttribute(Title = "Kompetencije", ParentKey = "BuduciStudent", Key = "BSKompetencije",
+            DynamicNodeProvider = "HKOWebMVC4.SiteMapNodeProviders.BuduciStudentProviders.ZanimanjeIDDeterminedDynamicNodeProvider, HKOWebMVC4")]
         public ActionResult Kompetencije(int zanimanjeId)
         {
             ObjectResult<ZanimanjeKompetencije_Result> zanimanjeKompetencijeResult = HKOData.ZanimanjeKompetencije(zanimanjeId);
             return View("~/Views/HKOWebViews/BuduciStudent/Kompetencije.cshtml", zanimanjeKompetencijeResult);
         }
 
+        [MvcSiteMapNodeAttribute(Title = "Kolegiji", ParentKey = "BuduciStudent",
+            DynamicNodeProvider = "HKOWebMVC4.SiteMapNodeProviders.BuduciStudentProviders.StudijskiProgramIDZanimanjeIDDeterminedDynamicNodeProvider, HKOWebMVC4")]
         public ActionResult Kolegiji(int studijskiProgramId, int zanimanjeId)
         {
             KolegijiPregled kolegijiPregled = new KolegijiPregled();
@@ -52,6 +62,8 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.BuduciStudent
             return View("~/Views/HKOWebViews/BuduciStudent/Kolegiji.cshtml", kolegijiPregled);
         }
 
+        [MvcSiteMapNodeAttribute(Title = "Kompetencije", Key = "BSIshodiUcenja",
+            DynamicNodeProvider = "HKOWebMVC4.SiteMapNodeProviders.BuduciStudentProviders.KolegijIDDeterminedDynamicNodeProvider, HKOWebMVC4")]
         // GET: BuduciStudent/Delete/5
         public ActionResult IshodiUcenja(int kolegijId)
         {

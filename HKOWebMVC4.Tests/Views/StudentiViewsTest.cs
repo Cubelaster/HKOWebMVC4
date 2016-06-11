@@ -1,9 +1,7 @@
 ﻿using NUnit.Framework;
-using HKOWebMVC4.Views;
 using HtmlAgilityPack;
 using RazorGenerator.Testing;
-using System.Collections.Generic;
-using System.Data.Entity.Core.Objects;
+using ASP;
 
 namespace HKOWebMVC4.Tests.Views
 {

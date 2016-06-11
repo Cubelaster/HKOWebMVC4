@@ -3,6 +3,7 @@ using HKOWebMVC4.DAL.Repository.UserServices;
 using HKOWebMVC4.DAL.Service.PoslodavacService;
 using HKOWebMVC4.Models;
 using HKOWebMVC4.Models.HKOWebModels.Korisnik;
+using MvcSiteMapProvider;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
@@ -23,6 +24,7 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.Poslodavac
         #endregion
 
         // GET: Poslodavac
+        [MvcSiteMapNodeAttribute(Title = "Poslodavac postavke", ParentKey = "Home", Key = "PoslodavacIndex")]
         public ActionResult Index()
         {
             KorisnikOdabirZanimanja odabirZanimanja = new KorisnikOdabirZanimanja();
@@ -31,6 +33,7 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.Poslodavac
             return View("~/Views/HKOWebViews/Poslodavac/Index.cshtml", odabirZanimanja);
         }
 
+        [MvcSiteMapNodeAttribute(Title = "Pregled kandidata", ParentKey = "PoslodavacIndex", Key = "KandidatiPoslodavca")]
         public ActionResult Kandidati()
         {
             List<KorisnikOdabranaZanimanja> trazenaZanimanja = userService.getSelectedProffesionForCurrentUser();

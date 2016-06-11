@@ -1,9 +1,6 @@
 ﻿@model HKOWebMVC4.Models.IndexViewModel
-@{
-    ViewBag.Title = "Podaci korisnika";
-}
 
-<h2>@ViewBag.Title</h2>
+<h4>@Html.MvcSiteMap().SiteMapPath()</h4>
 
 <p class="text-success">@TempData["update"]</p>
 

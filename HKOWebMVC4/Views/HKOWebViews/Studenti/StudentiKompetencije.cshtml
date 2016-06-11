@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<HKOWebMVC4.KolegijKompetencije_Result>
 
-<h2>Kompetencije studenta</h2>
+<h5>@Html.MvcSiteMap().SiteMapPath() > Kompetencije</h5>
 
 <table class="table" id="studentKompetencije">
     <thead>
@@ -21,3 +21,5 @@
         }
     </tbody>
 </table>
+
+<a href=@ViewBag.back class="btn btn-primary">Povratak</a>
