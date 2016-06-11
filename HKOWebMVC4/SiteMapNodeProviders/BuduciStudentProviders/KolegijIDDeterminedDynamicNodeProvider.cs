@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using HKOWebMVC4.ExtensionMethods;
 
+//http://stackoverflow.com/questions/33159532/can-mvc-sitemapprovider-dynamicnode-be-used-on-1st-level-solved
+
 namespace HKOWebMVC4.SiteMapNodeProviders.BuduciStudentProviders
 {
     public class KolegijIDDeterminedDynamicNodeProvider : DynamicNodeProviderBase
