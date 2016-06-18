@@ -13,6 +13,7 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.Studenti
     {
 
         private static HKOPodaci hkoPodaci = new HKOPodaci();
+        private static ISVU_API.Isvu ISVU = new ISVU_API.Isvu();
 
         // GET: Studenti
         public ActionResult Index()
@@ -25,7 +26,7 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.Studenti
         public ActionResult Kompetencije(string JMBAG)
         {
 
-            List<ISVU_API.DetaljniUpisniList.upisaniPredmet> listaPredmeta = ISVU_API.Isvu.UpisniListovi(JMBAG);
+            List<ISVU_API.DetaljniUpisniList.upisaniPredmet> listaPredmeta = ISVU.UpisniListovi(JMBAG);
             HashSet<KolegijKompetencije_Result> setKompetencija = new HashSet<KolegijKompetencije_Result>();
 
             foreach(upisaniPredmet predmeti in listaPredmeta)

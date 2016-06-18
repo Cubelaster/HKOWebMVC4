@@ -183,13 +183,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HKOWebMVC4\HKOWebMVC4.csproj">
-      <Project>{EC1FF320-B87A-4434-B4F1-39ED7004ED2E}</Project>
-      <Name>HKOWebMVC4</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <ProjectReference Include="..\HKOWebMVC4\HKOWebMVC4.csproj">
+      <Project>{ec1ff320-b87a-4434-b4f1-39ed7004ed2e}</Project>
+      <Name>HKOWebMVC4</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
