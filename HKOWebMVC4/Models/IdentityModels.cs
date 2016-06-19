@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using HKOWebMVC4.Models.HKOWebModels.Korisnik;
 using System.Collections.Generic;
+using System;
 
 namespace HKOWebMVC4.Models
 {
@@ -36,10 +37,13 @@ namespace HKOWebMVC4.Models
     //ime, prezime, JMBAG, email, korisničko ime i lozinka.
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+
+    [Obsolete("ApplicationDbContext je defaultni Context iz MVC-a. Sve vezano uz bazu treba biti prebačeno na HKO_WEB.")]
+    /// <see cref="HKO_WEB"/>
+    public class ApplicationDbContext : DbContext //IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection")
         {
             //koga briga za migracije
             //Database.SetInitializer<ApplicationDbContext>(new DropCreateDatabaseAlways<ApplicationDbContext>());

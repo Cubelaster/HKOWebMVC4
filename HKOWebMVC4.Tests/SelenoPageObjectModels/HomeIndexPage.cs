@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 
 namespace HKOWebMVC4.Tests.SelenoPageObjectModels
 {
-    public class HomeIndexPage : Page<Models.ApplicationDbContext>
+    public class HomeIndexPage : Page<HKO_WEB>
     {
         public string HeaderOne
         {
@@ -29,7 +29,7 @@ namespace HKOWebMVC4.Tests.SelenoPageObjectModels
         /**
          * Primjer kako proslijediti model prema viewu na click
          */
-        public T NavigateTo<T>(Models.ApplicationDbContext model) where T : UiComponent, new()
+        public T NavigateTo<T>(HKO_WEB model) where T : UiComponent, new()
         {
             Input.Model(model);
 

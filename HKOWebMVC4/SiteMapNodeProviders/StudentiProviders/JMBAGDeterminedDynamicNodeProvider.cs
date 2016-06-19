@@ -9,7 +9,7 @@ namespace HKOWebMVC4.SiteMapNodeProviders.StudentiProviders
 {
     public class JMBAGDeterminedDynamicNodeProvider : DynamicNodeProviderBase
     {
-        ApplicationDbContext dbContext = new ApplicationDbContext();
+        HKO_WEB dbContext = new HKO_WEB();
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection(ISiteMapNode node)
         {
             foreach(UserProfileInfo user in dbContext.UserProfileInfo)

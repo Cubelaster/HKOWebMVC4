@@ -11,7 +11,7 @@ namespace HKOWebMVC4.DAL.Repository.PoslodavacRepository
     public class PoslodavacRepository
     {
         #region members
-        private static ApplicationDbContext dbContext = new ApplicationDbContext();
+        private static HKO_WEB dbContext = new HKO_WEB();
         private static UserRepository userRepo = new UserRepository();
         #endregion
 

@@ -13,7 +13,7 @@ namespace HKOWebMVC4.DAL.Repository.UserRepositories
     public class UserRepository
     {
         #region members
-        private static ApplicationDbContext dbContext = new ApplicationDbContext();
+        private static HKO_WEB dbContext = new HKO_WEB();
         private static UserStore<ApplicationUser> userStore = new UserStore<ApplicationUser>(dbContext);
         private static UserManager<ApplicationUser> userManager = new UserManager<ApplicationUser>(userStore);
         private HKOPodaciService.HKOPodaciService HKOPodaci = new HKOPodaciService.HKOPodaciService();

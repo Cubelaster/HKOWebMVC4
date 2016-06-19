@@ -252,6 +252,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HKOPodaci.edmx</DependentUpon>
     </Compile>
+    <Compile Include="HKO_WEB.cs" />
     <Compile Include="KolegijKompetencije_Result.cs">
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
@@ -264,6 +265,15 @@
     </Compile>
     <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\HKO_WEB\201606190930406_Inicijalna Migracija.cs" />
+    <Compile Include="Migrations\HKO_WEB\201606190930406_Inicijalna Migracija.Designer.cs">
+      <DependentUpon>201606190930406_Inicijalna Migracija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\HKO_WEB\201606191009150_Dodan IdentityDbContext.cs" />
+    <Compile Include="Migrations\HKO_WEB\201606191009150_Dodan IdentityDbContext.Designer.cs">
+      <DependentUpon>201606191009150_Dodan IdentityDbContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\HKO_WEB\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HKOWebModels\AjaxModels\_AjaxResponseModel.cs" />
     <Compile Include="Models\HKOWebModels\ExceptionModels\HKOWebRuntimeException.cs" />
@@ -661,6 +671,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\ApplicationDbContext\201605290958256_Prilikom testiranja.resx">
       <DependentUpon>201605290958256_Prilikom testiranja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\HKO_WEB\201606190930406_Inicijalna Migracija.resx">
+      <DependentUpon>201606190930406_Inicijalna Migracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\HKO_WEB\201606191009150_Dodan IdentityDbContext.resx">
+      <DependentUpon>201606191009150_Dodan IdentityDbContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
