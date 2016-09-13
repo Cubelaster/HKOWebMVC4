@@ -10,7 +10,8 @@ namespace HKOWebMVC4
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js", 
-                        "~/Scripts/HKOWebJS.js"
+                        "~/Scripts/HKOWebJS.js",
+                        "~/Scripts/ShowCompetencyForSelectedOccupation.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

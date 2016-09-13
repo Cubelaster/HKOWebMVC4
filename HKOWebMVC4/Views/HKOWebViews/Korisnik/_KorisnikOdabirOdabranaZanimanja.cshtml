@@ -10,7 +10,7 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div id="_AjaxInfoMessage"></div>
     <div class="form-horizontal">
-        <div class="col-md-12 panel">
+        <div class="col-md-12 panel zanimanja-div">
             <div class="col-md-6">
                 <ul class="list-unstyled">
                     @foreach (var entry in Model.svaZanimanja)
@@ -18,7 +18,7 @@
                         itemCount++;
                         if (Model.odabranaZanimanja.Count <= 0)
                         {
-                            <li>
+                            <li class="kompetencije-tabbed-displayer">
                                 <input id=@Html.Raw(entry.Key) class="zanimanjeId" type="checkbox" value=@Html.Raw(entry.Key) />
                                 <label for=@Html.Raw(entry.Key) class="zanimanjeNaziv">@Html.Raw(entry.Value)</label>
                             </li>
@@ -38,14 +38,14 @@
                             }
                             if (choiceChecked)
                             {
-                                <li class="chosenProffesion">
+                                <li class="chosenProffesion kompetencije-tabbed-displayer">
                                     <input id=@Html.Raw(entry.Key) class="zanimanjeId" type="checkbox" value=@Html.Raw(entry.Key) checked="checked" />
                                     <label for=@Html.Raw(entry.Key) class="zanimanjeNaziv">@Html.Raw(entry.Value)</label>
                                 </li>
                             }
                             else
                             {
-                                <li>
+                                <li class="kompetencije-tabbed-displayer">
                                     <input id=@Html.Raw(entry.Key) class="zanimanjeId" type="checkbox" value=@Html.Raw(entry.Key) />
                                     <label for=@Html.Raw(entry.Key) class="zanimanjeNaziv">@Html.Raw(entry.Value)</label>
                                 </li>
