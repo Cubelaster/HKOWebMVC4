@@ -28,13 +28,13 @@ $(document).ready(function () {
             dataType: "json",
             success: function (data) {
                 if (data.type == 2) {
-                    surveysDiv.prepend('<div class ="alert alert-danger ajaxAlertMessageDiv">' + data.message + "</div>");
+                    $("#_AjaxInfoMessage").prepend('<div class ="alert alert-warning ajaxAlertMessageDiv">' + data.message + "</div>");
                 }
                 if (data.type == 0) {
                     $("#_KompetencijeTabbedResult").prepend('<div id="kompetencijeDynamicDiv">' + data.message + "</div>");
                 }
                 if (data.type == 1) {
-                    $("#_AjaxInfoMessage").prepend('<div class ="alert alert-success ajaxAlertMessageDiv">' + data.message + "</div>");
+                    $("#_AjaxInfoMessage").prepend('<div class ="alert alert-danger ajaxAlertMessageDiv">' + data.message + "</div>");
                 }
                 $('.kompetencije-table').DataTable({
                     "bAutoWidth": false
