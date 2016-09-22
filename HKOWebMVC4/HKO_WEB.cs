@@ -9,7 +9,7 @@ namespace HKOWebMVC4
     {
         public HKO_WEB()
             : base("name=HKO_WEB", throwIfV1Schema: false)
-        {
+        {            
         }
 
         public static HKO_WEB Create()

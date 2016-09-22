@@ -38,24 +38,24 @@ namespace HKOWebMVC4.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
 
 
-    [Obsolete("ApplicationDbContext je defaultni Context iz MVC-a. Sve vezano uz bazu treba biti prebačeno na HKO_WEB.")]
+    //[Obsolete("ApplicationDbContext je defaultni Context iz MVC-a. Sve vezano uz bazu treba biti prebačeno na HKO_WEB.")]
     /// <see cref="HKO_WEB"/>
-    public class ApplicationDbContext : DbContext //IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("DefaultConnection")
-        {
-            //koga briga za migracije
-            //Database.SetInitializer<ApplicationDbContext>(new DropCreateDatabaseAlways<ApplicationDbContext>());
-        }
+    //public class ApplicationDbContext : DbContext //IdentityDbContext<ApplicationUser>
+    //{
+    //    public ApplicationDbContext()
+    //        : base("DefaultConnection")
+    //    {
+    //        //koga briga za migracije
+    //        //Database.SetInitializer<ApplicationDbContext>(new DropCreateDatabaseAlways<ApplicationDbContext>());
+    //    }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
+    //    public static ApplicationDbContext Create()
+    //    {
+    //        return new ApplicationDbContext();
+    //    }
 
-        public DbSet<UserProfileInfo> UserProfileInfo { get; set; }
-        public DbSet<KorisnikOdabranaZanimanja> KorisnikOdabranaZanimanja { get; set; }
+    //    public DbSet<UserProfileInfo> UserProfileInfo { get; set; }
+    //    public DbSet<KorisnikOdabranaZanimanja> KorisnikOdabranaZanimanja { get; set; }
 
-    }
+    //}
 }
