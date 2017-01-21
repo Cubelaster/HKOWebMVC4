@@ -656,6 +656,7 @@
     <Content Include="Views\HKOWebViews\StudijskiProgrami\Index.cshtml" />
     <Content Include="Views\HKOWebViews\StudijskiProgrami\StudijskiProgramiObavezniKolegiji.cshtml" />
     <Content Include="Views\HKOWebViews\Kompetencije\_KompetencijeTabbedList.cshtml" />
+    <Content Include="Views\Korisnik\_KorisnikOdabirOdabranaZanimanja.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
