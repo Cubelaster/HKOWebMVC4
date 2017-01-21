@@ -4,7 +4,6 @@ namespace HKOWebMVC4
     using Models;
     using Models.HKOWebModels.Korisnik;
     using Microsoft.AspNet.Identity.EntityFramework;
-    using System.Data.Entity.ModelConfiguration.Conventions;
     public partial class HKO_WEB : IdentityDbContext<ApplicationUser>
     {
         public HKO_WEB()

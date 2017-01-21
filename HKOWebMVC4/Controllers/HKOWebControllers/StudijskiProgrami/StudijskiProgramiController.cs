@@ -1,17 +1,14 @@
 ﻿using HKOWebMVC4.Models.HKOWebModels;
 using MvcSiteMapProvider;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 using System.IO;
 
-namespace HKOWebMVC4.Controllers.HKOWebControllers.StudijskiProgrami {
+namespace HKOWebMVC4.Controllers.HKOWebControllers.StudijskiProgrami
+{
     [Authorize]
     public class StudijskiProgramiController : Controller {
         #region member
