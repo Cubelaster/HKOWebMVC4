@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -8,7 +7,6 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HKOWebMVC4.Models;
 using HKOWebMVC4.DAL.Repository.UserServices;
-using Microsoft.AspNet.Identity.EntityFramework;
 using HKOWebMVC4.Models.HKOWebModels.Korisnik;
 using MvcSiteMapProvider;
 
@@ -37,9 +35,9 @@ namespace HKOWebMVC4.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -57,7 +55,7 @@ namespace HKOWebMVC4.Controllers
 
         //
         // GET: /Manage/Index
-        [MvcSiteMapNodeAttribute(Title = "Podaci korisnika", ParentKey = "Home", Key ="ManageUser")]
+        [MvcSiteMapNodeAttribute(Title = "Podaci korisnika", ParentKey = "Home", Key = "ManageUser")]
         public async Task<ActionResult> Index(ManageMessageId? message, int? studentId)
         {
             ViewBag.StatusMessage =
@@ -353,7 +351,7 @@ namespace HKOWebMVC4.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -405,6 +403,6 @@ namespace HKOWebMVC4.Controllers
             UpdateSuccess
         }
 
-#endregion
+        #endregion
     }
 }

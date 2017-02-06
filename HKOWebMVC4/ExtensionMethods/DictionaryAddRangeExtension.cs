@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace HKOWebMVC4.ExtensionMethods
 {
     public static class DictionaryAddRangeExtension
-    {        public static void AddRange<T, S>(this Dictionary<T, S> source, Dictionary<T, S> collection)
+    {
+        public static void AddRange<T, S>(this Dictionary<T, S> source, Dictionary<T, S> collection)
         {
             if (collection != null)
             {

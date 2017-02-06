@@ -8,6 +8,9 @@
         <Function Name="KolegijKompetencije" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
           <Parameter Name="KolegijISVUSifra" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="KolegijSilabus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="KolegijID" Type="int" Mode="In" />
+        </Function>
         <Function Name="KolegijSkupIshodaUcenja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
           <Parameter Name="KolegijID" Type="int" Mode="In" />
         </Function>
@@ -87,6 +90,9 @@
           <FunctionImport Name="KolegijKompetencije" ReturnType="Collection(HKOModel.KolegijKompetencije_Result)">
           <Parameter Name="KolegijISVUSifra" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="KolegijSilabus" ReturnType="Collection(HKOModel.KolegijSilabus_Result)">
+            <Parameter Name="KolegijID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="KolegijSkupIshodaUcenja_Result">
           <Property Type="Int32" Name="SkupIshodaUcenjaID" Nullable="false" />
@@ -143,6 +149,13 @@
         <ComplexType Name="KolegijKompetencije_Result">
           <Property Type="Int32" Name="IDKompetencija" Nullable="false" />
           <Property Type="String" Name="Kompetencija" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="KolegijSilabus_Result">
+          <Property Type="Int32" Name="IDKolegij" Nullable="true" />
+          <Property Type="String" Name="Naziv" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Naziv1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DokumentNaziv" Nullable="true" MaxLength="300" />
+          <Property Type="Binary" Name="DokumentBlob" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -256,6 +269,17 @@
               <ComplexTypeMapping TypeName="HKOModel.KolegijKompetencije_Result">
                 <ScalarProperty Name="IDKompetencija" ColumnName="IDKompetencija" />
                 <ScalarProperty Name="Kompetencija" ColumnName="Kompetencija" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="KolegijSilabus" FunctionName="HKOModel.Store.KolegijSilabus">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.KolegijSilabus_Result">
+                <ScalarProperty Name="IDKolegij" ColumnName="IDKolegij" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Naziv1" ColumnName="Naziv1" />
+                <ScalarProperty Name="DokumentNaziv" ColumnName="DokumentNaziv" />
+                <ScalarProperty Name="DokumentBlob" ColumnName="DokumentBlob" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

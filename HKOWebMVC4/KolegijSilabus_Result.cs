@@ -11,9 +11,12 @@ namespace HKOWebMVC4
 {
     using System;
     
-    public partial class KolegijKompetencije_Result
+    public partial class KolegijSilabus_Result
     {
-        public int IDKompetencija { get; set; }
-        public string Kompetencija { get; set; }
+        public Nullable<int> IDKolegij { get; set; }
+        public string Naziv { get; set; }
+        public string Naziv1 { get; set; }
+        public string DokumentNaziv { get; set; }
+        public byte[] DokumentBlob { get; set; }
     }
 }

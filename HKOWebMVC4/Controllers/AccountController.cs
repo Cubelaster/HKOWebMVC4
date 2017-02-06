@@ -6,7 +6,6 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HKOWebMVC4.Models;
-using static HKOWebMVC4.Controllers.ManageController;
 using HKOWebMVC4.DAL.Repository.UserServices;
 
 namespace HKOWebMVC4.Controllers
@@ -18,9 +17,7 @@ namespace HKOWebMVC4.Controllers
         private ApplicationUserManager _userManager;
         private UserService userService = new UserService();
 
-        public AccountController()
-        {
-        }
+        public AccountController() { }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {

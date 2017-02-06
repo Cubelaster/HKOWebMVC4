@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace HKOWebMVC4
 {
@@ -9,7 +8,7 @@ namespace HKOWebMVC4
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js", 
+                        "~/Scripts/jquery-{version}.js",
                         "~/Scripts/HKOWebJS.js",
                         "~/Scripts/ShowCompetencyForSelectedOccupation.js"
                         ));
