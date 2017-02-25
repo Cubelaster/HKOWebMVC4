@@ -91,7 +91,7 @@
           <Parameter Name="KolegijISVUSifra" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="KolegijSilabus" ReturnType="Collection(HKOModel.KolegijSilabus_Result)">
-            <Parameter Name="KolegijID" Mode="In" Type="Int32" />
+          <Parameter Name="KolegijID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="KolegijSkupIshodaUcenja_Result">

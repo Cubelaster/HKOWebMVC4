@@ -259,6 +259,9 @@
     <Compile Include="KolegijKompetencije_Result.cs">
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
+    <Compile Include="KolegijSilabus_Result.cs">
+      <DependentUpon>HKOPodaci.tt</DependentUpon>
+    </Compile>
     <Compile Include="KolegijSkupIshodaUcenja_Result.cs">
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
